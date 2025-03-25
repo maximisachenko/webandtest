@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <div className="text-weband">
-      <h1>Hello world!</h1>
+      <h1>Hello world! Hello world!</h1>
     </div>
   );
 }
