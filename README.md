@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# **Weband**
 
-## Getting Started
+### **Brief Description**
+The WeBand company business card website, which includes information about the company, its services and contact details, serves to attract clients and partners.
 
-First, run the development server:
+___
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### **Table of Contents**
+
+
+- [**Weband**](#weband)
+    - [**Brief Description**](#brief-description)
+    - [**Table of Contents**](#table-of-contents)
+    - [**Important Project Dependencies**](#important-project-dependencies)
+    - [**Getting Started**](#getting-started)
+    - [**Frontend Sctucture**](#frontend-sctucture)
+    - [**Project Description**](#project-description)
+    - [**Technology Stack**](#technology-stack)
+    - [Design Layout](#design-layout)
+    - [Web-page creation](#web-page-creation)
+    - [Frameworks and libraries](#frameworks-and-libraries)
+    - [Version control system](#version-control-system)
+
+___
+
+### **Important Project Dependencies**
+
+- node.js: 22.14.0
+- npm: 11.2.0
+
+___
+
+### **Getting Started**
+
 ```
+npm install   # Installs all the necessary dependencies specified in package.json
+```
+Next, we need to start the server:
+```
+npm run dev       # Starts the development server with Turbopack for faster and optimized hot reloading
+# or
+npm run build     # Builds the project for production environment, minifies and optimizes the files
+# or
+npm run start     # Starts the application in production mode after running npm run build
+```
+If necessary, check the code:
+```
+npm run lint      # Runs the linter (eslint) to check the code for style issues and prevent errors
+```
+Open http://localhost:3000 in your browser to see the result.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+___
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### **Frontend Sctucture**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Home Page: Header, About us, Main feature block, Team, Cases, Reviews, Contact Form, Footer.
 
-## Learn More
+___
 
-To learn more about Next.js, take a look at the following resources:
+### **Project Description**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The WeBand company business card website, which includes information about the company, its services and contact details, serves to attract clients and partners.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+___
 
-## Deploy on Vercel
+### **Technology Stack**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Design Layout
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Figma (Material UI)
+
+### Web-page creation
+
+- React.js: for create a dynamic user interface.
+- Next.js: for server-side rendering, routing and static page generation.
+- TypeScript: for improved code typing and reliability.
+- TailwindCSS for styling
+  
+### Frameworks and libraries
+
+- Next.js/React.js: for building the user interface.
+
+
+### Version control system
+
+- Azure DevOps: is used to manage repositories, track code changes, and organise CI/CD processes.
+
+  - Jest: to test the interaction between different modules of the system.
