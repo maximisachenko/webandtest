@@ -1,7 +1,11 @@
+import { Header } from "@/components/layout";
+import { Hero } from "@/components/sections";
+
 export default function Home() {
   return (
-    <div className="text-weband">
-      <h1>Hello world! Hello world!</h1>
+    <div>
+      <Header />
+      <Hero />
     </div>
   );
 }
