@@ -1,14 +1,17 @@
 import React from 'react'
+import Image from 'next/image';
 
 interface Props {
     title: string;
-    section: 'header' | 'about-us' | 'directions' | 'team' | 'cases' | 'form' | 'footer';
+    section: 'header' | 'about-us' | 'directions' | 'team' | 'cases' | 'form' | 'footer' | 'hero';
     icon?: string
+    iconWidth?: number;
+    iconHeight?: number;
 }
 
-const Button = ({ title, icon, section }: Props) => {
+const Button = ({ title, icon, section, iconWidth, iconHeight }: Props) => {
     const buttonClass =
-        section === 'header' ? 'header-button primary-button' :
+        section === 'header' || 'hero' ? 'header-hero-btn primary-button' :
             section === 'about-us' ? 'about-us-button' :
                 section === 'directions' ? 'directions-button' :
                     section === 'team' ? 'team-button' :
@@ -18,8 +21,8 @@ const Button = ({ title, icon, section }: Props) => {
 
     return (
         <button className={`${buttonClass}`}>
-            {icon && <img src={icon} alt="icon" />}
             {title}
+            {icon && <Image src={icon} alt="icon" width={iconWidth} height={iconHeight} />}
         </button>
     );
 }

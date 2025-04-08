@@ -18,7 +18,7 @@ const Header = () => {
                 <Logo width={181} height={62} className='max-sm:w-[95px] max-sm:h-[28px] max-md:w-[138px] max-md:h-[44px] max-lg:w-[138px] max-lg:h-[44px] max-xl:w-[155px] max-xl:h-[56px]' />
                 <div className='flex gap-16 hide-on-mobile max-lg:gap-6 max-xl:gap-12'>
                     <nav className='flex items-center gap-8'>
-                        <ul className='text-black font-semibold text-lg flex gap-8 justify-center sm:text-sm sm:gap-4 lg:text-[16px] lg:gap-6'>
+                        <ul className='text-black font-semibold flex text-lg gap-8 justify-center max-lg:text-sm max-lg:gap-4 max-xl:text-[16px] max-xl:gap-6'>
                             <li>
                                 <a href='/'>About us</a>
                             </li>
