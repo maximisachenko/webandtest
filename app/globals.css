@@ -10,6 +10,7 @@
 
 @theme {
   --color-primary: var(--primary);
+  --background-color-second: var(--second-background);
 }
 
 @theme inline {
@@ -62,6 +63,23 @@ li:hover::after {
   width: 100%;
 }
 
+.directions-btn {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  background-color: transparent;
+  color: var(--primary);
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 500;
+  transition: all 0.2s linear 0s;
+}
+
+.directions-btn:hover {
+  gap:8px;
+  color: var(--primary-hover);
+}
+
 .header-hero-btn {
   display: flex;
   gap: 8px;
@@ -81,6 +99,7 @@ li:hover::after {
   transition: all 0.2s linear 0s;
 }
 
+
 .primary-button:hover {
   background-color: var(--primary-hover);
 }
@@ -88,6 +107,46 @@ li:hover::after {
 .primary-button:hover::after {
   background-color: var(--primary);
 }
+
+.directions-shadow {
+  box-shadow: 3px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.directions-card {
+  position: relative;
+  background-color: #F6F6F6;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.directions-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #ED5F40 0%, #fc8f77 50%, #f5a390 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 0;
+}
+
+.directions-card:hover::before {
+  opacity: 1;
+}
+
+.directions-card * {
+  position: relative;
+  z-index: 1;
+}
+
+.directions-card img {
+  transition: transform 0.4s ease-in-out;
+}
+
+.directions-card:hover img {
+  transform: scale(1.05);
+}
+
 
 
 .hero-button {

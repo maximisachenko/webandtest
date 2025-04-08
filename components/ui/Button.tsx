@@ -7,20 +7,21 @@ interface Props {
     icon?: string
     iconWidth?: number;
     iconHeight?: number;
+    className?: string;
 }
 
-const Button = ({ title, icon, section, iconWidth, iconHeight }: Props) => {
+const Button = ({ title, icon, section, iconWidth, iconHeight, className }: Props) => {
     const buttonClass =
-        section === 'header' || 'hero' ? 'header-hero-btn primary-button' :
+        section === 'header' || section === 'hero' ? 'header-hero-btn primary-button' :
             section === 'about-us' ? 'about-us-button' :
-                section === 'directions' ? 'directions-button' :
+                section === 'directions' ? 'directions-btn foreground-button' :
                     section === 'team' ? 'team-button' :
                         section === 'cases' ? 'cases-button' :
                             section === 'form' ? 'form-button' :
                                 section === 'footer' ? 'footer-button' : '';
 
     return (
-        <button className={`${buttonClass}`}>
+        <button className={`${buttonClass} ${className}`}>
             {title}
             {icon && <Image src={icon} alt="icon" width={iconWidth} height={iconHeight} />}
         </button>

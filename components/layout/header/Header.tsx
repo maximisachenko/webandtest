@@ -13,7 +13,7 @@ const Header = () => {
     }
 
     return (
-        <header className='shadow-xl'>
+        <header className='shadow-xl sticky top-0 z-60 bg-white'>
             <div className='flex items-center justify-between pl-16 pr-8 py-8 max-md:p-6 max-lg:pl-12 max-lg:pr-6 max-lg:py-6 max-xl:pl-14 max-xl:pr-7 max-xl:py-7'>
                 <Logo width={181} height={62} className='max-sm:w-[95px] max-sm:h-[28px] max-md:w-[138px] max-md:h-[44px] max-lg:w-[138px] max-lg:h-[44px] max-xl:w-[155px] max-xl:h-[56px]' />
                 <div className='flex gap-16 hide-on-mobile max-lg:gap-6 max-xl:gap-12'>
