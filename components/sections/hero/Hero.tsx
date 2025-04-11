@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useEffect } from 'react'
-import { Button } from '@/components/ui';
-import SocialButton from './SocialButton';
+import { Button, SocialButton } from '@/components/ui';
 import { gsap } from 'gsap';
+import { OUR_SOCIALS_HERO } from '@/constants/socials';
 
 const Hero = () => {
     useEffect(() => {
@@ -30,7 +30,7 @@ const Hero = () => {
 
             <div className="absolute top-0 left-0 w-full h-full bg-black/60 z-0" />
 
-            <div className="hero-content relative z-10 flex items-center justify-between h-full mx-41 max-md:justify-center max-md:text-center max-sm:mx-6 max-md:mx-10 max-lg:mx-15">
+            <div className="hero-content relative z-10 flex items-center justify-between h-full mx-54 max-md:justify-center max-md:text-center max-xl:mx-24 max-lg:mx-16 max-sm:mx-12 max-md:mx-30">
                 <div className='flex flex-col gap-5 max-md:items-center'>
                     <div className='flex flex-col text-7xl font-bold max-sm:text-4xl max-md:text-5xl max-xl:text-6xl'>
                         <span className='text-white'>Web solutions</span>
@@ -44,9 +44,9 @@ const Hero = () => {
                     </div>
                 </div>
                 <div className='flex flex-col gap-6 max-md:hidden'>
-                    <SocialButton title='linkedin' />
-                    <SocialButton title='instagram' />
-                    <SocialButton title='facebook' />
+                    {OUR_SOCIALS_HERO.map((social, index) => (
+                        <SocialButton key={index} title={social.title} section={social.section} />
+                    ))}
                 </div>
             </div >
         </div >

@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 interface Props {
     title: string;
-    section: 'header' | 'about-us' | 'directions' | 'team' | 'cases' | 'form' | 'footer' | 'hero';
+    section?: 'header' | 'about-us' | 'directions' | 'team' | 'cases' | 'form' | 'footer' | 'hero';
     icon?: string
     iconWidth?: number;
     iconHeight?: number;
@@ -12,11 +12,11 @@ interface Props {
 
 const Button = ({ title, icon, section, iconWidth, iconHeight, className }: Props) => {
     const buttonClass =
-        section === 'header' || section === 'hero' ? 'header-hero-btn primary-button' :
+        section === 'header' ? 'header-hero-btn primary-button' : section === 'hero' ? 'header-hero-btn primary-button' :
             section === 'about-us' ? 'about-us-button' :
-                section === 'directions' ? 'directions-btn foreground-button' :
+                section === 'directions' ? 'directions-btn' :
                     section === 'team' ? 'team-button' :
-                        section === 'cases' ? 'cases-button' :
+                        section === 'cases' ? 'cases-btn' :
                             section === 'form' ? 'form-button' :
                                 section === 'footer' ? 'footer-button' : '';
 

@@ -1,10 +1,11 @@
 'use client';
 
-import { Button, Container, Heading } from '@/components/ui'
+import { Button, Container, Description, Heading } from '@/components/ui'
 import React, { useEffect } from 'react'
-import { Card } from '.'
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { OUR_DIRECTIONS } from '@/constants/directions';
+import { DirectionCard } from '..';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -26,19 +27,21 @@ const Directions = () => {
 
 
     return (
-        <Container type={'center'} colorContainer={'gray'} className='flex flex-col gap-16 directions-content'>
-            <div className='flex justify-between items-center'>
-                <Heading primaryTitle='Our' foregroundTitle='directions are innovations.' />
-                <div className='flex items-center gap-6'>
+        <Container type={'center'} colorContainer={'gray'} className='flex flex-col gap-16 directions-content max-xl:px-24 max-lg:px-16 max-sm:px-6 max-md:px-30'>
+            <div className='flex justify-between items-center max-md:justify-center max-md:flex-col max-md:text-center max-md:gap-4'>
+                <Heading primaryTitle='Our' foregroundTitle='directions are innovations.' className='directions-heading max-md:text-center max-lg:text-[26px]' />
+                <div className='flex items-center gap-6 max-md:hidden'>
                     <Button title='Learn more' section='directions' icon='/assets/icons/right-arrow.svg' iconWidth={16} iconHeight={16} />
                     <Button title='Contact us' section='directions' icon='/assets/icons/directions-mail.svg' iconHeight={18} iconWidth={18} />
                 </div>
+                <Description text='Innovative directions are what we strives for. Innovation is a big step towards the future.' className='md:hidden' />
             </div>
-            <div className='flex justify-between w-full bg-white rounded-[66px] py-16 px-24 directions-shadow'>
-                <Card title={'AI'} src='/assets/images/ai.png' />
-                <Card title={'Fintech'} src='/assets/images/fintech.png' />
-                <Card title={'Robotics'} src='/assets/images/robotics.png' />
+            <div className='flex justify-between w-full bg-white rounded-3xl directions-shadow py-16 px-24 max-md:flex-col directions-shadow max-md:gap-12 max-md:items-center'>
+                {OUR_DIRECTIONS.map((direction, index) => (
+                    <DirectionCard key={index} title={direction.title} description={direction.description} src={direction.src} />
+                ))}
             </div>
+            <Button title={'Learn more'} className='flex gap-2 items-center justify-center bg-primary text-[16px] rounded-[9px] w-full py-3 font-semibold text-white max-lg:text-[16px] max-sm:text-[16px] hide-on-dekstop' icon='/assets/icons/right-arrow-white.svg' iconWidth={16} iconHeight={16} />
         </Container>
     )
 }

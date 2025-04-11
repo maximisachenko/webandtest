@@ -1,14 +1,15 @@
-import { Directions } from "@/components/sections/directions";
-import { Hero } from "@/components/sections/hero";
-import { Team } from "@/components/sections/team";
+import { Cases, Directions, Hero, Reviews, Team } from "@/components/sections";
+
 
 
 export default function Home() {
   return (
-    <div className="z-0">
+    <div>
       <Hero />
       <Directions />
       <Team />
+      <Cases />
+      <Reviews />
     </div>
   );
 }

@@ -4,10 +4,12 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 
 interface Props {
-    title: 'linkedin' | 'instagram' | 'facebook';
+    title: string;
+    section: string;
+    src?: string;
 }
 
-const SocialButton = ({ title }: Props) => {
+const SocialButton = ({ title, section, src }: Props) => {
     const [isHovered, setIsHovered] = useState(false);
 
     const handleMouseEnter = () => {
@@ -18,9 +20,11 @@ const SocialButton = ({ title }: Props) => {
         setIsHovered(false);
     };
 
+    const sectionClasses = section === 'hero' ? 'w-12 h-12' : section === 'team' ? 'w-7 h-7' : '';
+
     return (
         <div
-            className="relative w-12 h-12 cursor-pointer"
+            className={`relative ${sectionClasses}`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >

@@ -3,6 +3,8 @@
 :root {
   --background: #ffffff;
   --second-background: #FAFAFA;
+  --card: #F6F6F6;
+  --card-hover: #ededed;
   --primary: #ED5F40;
   --primary-hover: #c84d32; 
   --paragraph: rgba(0, 0, 0, 0.4);
@@ -11,6 +13,9 @@
 @theme {
   --color-primary: var(--primary);
   --background-color-second: var(--second-background);
+  --background-color-card: var(--card);
+  --background-color-card-hover: var(--card-hover);
+  --breakpoint-pre-lg: 1080px;
 }
 
 @theme inline {
@@ -95,6 +100,23 @@ li:hover::after {
   font-weight: 600;
 }
 
+.cases-btn {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  background-color: transparent;
+  color: var(--primary);
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 600;
+  transition: all 0.2s linear 0s;
+}
+
+.cases-btn:hover {
+  gap:8px;
+  color: var(--primary-hover);
+}
+
 .primary-button {
   transition: all 0.2s linear 0s;
 }
@@ -112,9 +134,54 @@ li:hover::after {
   box-shadow: 3px 0px 15px rgba(0, 0, 0, 0.1);
 }
 
+.team-card-shadow {
+  box-shadow: 3px 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s linear 0s;
+}
+
+.team-card-shadow:hover {
+  box-shadow: 3px 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.cases-card-shadow {
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s linear 0s;
+}
+
+.cases-card-shadow:hover {
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+.cases-quantity-card-shadow {
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s linear 0s;
+}
+
+.cases-quantity-card-shadow:hover {
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+.reviews-card-shadow {
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s linear 0s;
+}
+
+.reviews-card-shadow:hover {
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.reviews-card-shadow .img {
+  transition: transform 0.3s ease;
+}
+
+.reviews-card-shadow:hover .img {
+  transform: scale(1.1);
+}
+
+
 .directions-card {
   position: relative;
-  background-color: #F6F6F6;
+  background-color: var(--card);
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   overflow: hidden;
@@ -191,6 +258,46 @@ li:hover::after {
   height: 3px;
 }
 
+.directions-heading {
+  font-size: 40px;
+}
+
+.directions-links {
+  font-size: 16px;
+}
+
+.directions-image {
+  width: 204px;
+  height: 204px;
+}
+
+.directions-description {
+  font-size: 16px;
+}
+
+.directions-title {
+  font-size: 24px;
+}
+
+.directions-card-container {
+  width: 204;
+}
+
+.directions-sm-btn {
+  background-color: var(--primary);
+  font-size: 16px;
+  border-radius: 9px;
+}
+
+.swiper-container {
+  position: relative;
+}
+
+.slick-prev, .slick-next {
+  width: 60px !important;
+  height: 60px !important;
+  z-index: 50 !important;
+}
 
 @media (max-width: 768px) {
   .hide-on-mobile {
@@ -204,22 +311,117 @@ li:hover::after {
   }
 }
 
-/* @media (max-width: 1280px) {
-  ul {
-    font-size: 16px;
-    gap: 24px;
-  }
-} */
-
 @media (max-width: 1024px) {
-  /* ul {
-    font-size: 14px;
-    gap: 16px;
-  } */
 
   .header-button {
     font-size: 14px;
     padding-inline: 12px;
     padding-block: 8px;
+  }
+
+  .directions-btn {
+    font-size: 16px;
+  }
+}
+
+
+@media (max-width: 1320px) {
+  .directions-heading {
+    font-size: 36px;
+  }
+
+  .directions-image {
+    width: 170px;
+    height: 170px;
+  }
+
+  .directions-card-container {
+    width: 170;
+  }
+
+  .directions-description {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .directions-heading {
+    font-size: 32px;
+  }
+
+  .directions-title {
+    font-size: 20px;
+  }
+
+  .directions-image {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 1076px) {
+  .cases-btn {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .directions-heading {
+    font-size: 24px;
+  } 
+
+  .directions-image {
+    width: 130px;
+    height: 130px;
+  }
+
+  .directions-card-container {
+    width: 130;
+  }
+
+  .cases-btn {
+    display: flex;
+    justify-content: center;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 14px;
+    padding-inline: 14px;
+    padding-block: 10px;
+    font-size:16px;
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .cases-btn:hover {
+    color: white;
+    background-color: var(--primary-hover);
+  }
+}
+
+@media (max-width: 768px) {
+  .directions-heading {
+    font-size: 32px;
+  }
+  
+  .directions-links {
+    font-size: 16px;
+  }
+  
+  .directions-image {
+    width: 204px;
+    height: 204px;
+  }
+  
+  .directions-description {
+    font-size: 16px;
+  }
+  
+  .directions-title {
+    font-size: 24px;
+  }
+  
+  .directions-card-container {
+    width: 204;
   }
 }
