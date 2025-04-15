@@ -1,4 +1,5 @@
-import { Cases, Directions, Hero, Reviews, Team } from "@/components/sections";
+import { AboutUs, Cases, ContactForm, Directions, Hero, Reviews, Team } from "@/components/sections";
+import { Chatbot } from "@/components/ui";
 
 
 
@@ -10,6 +11,9 @@ export default function Home() {
       <Team />
       <Cases />
       <Reviews />
+      <AboutUs />
+      <ContactForm />
+      <Chatbot />
     </div>
   );
 }

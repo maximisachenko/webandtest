@@ -6,19 +6,33 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "start:server": "ts-node server.ts"
   },
   "dependencies": {
+    "@google/genai": "^0.8.0",
     "@gsap/react": "^2.1.2",
+    "@radix-ui/react-dialog": "^1.1.7",
+    "@radix-ui/react-popover": "^1.1.7",
+    "@radix-ui/react-scroll-area": "^1.2.4",
     "@radix-ui/react-slot": "^1.2.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cmdk": "^1.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
     "embla-carousel-react": "^8.6.0",
+    "express": "^5.1.0",
+    "framer-motion": "^12.6.5",
     "gsap": "^3.12.7",
+    "libphonenumber-js": "^1.12.6",
     "lucide-react": "^0.487.0",
     "next": "15.2.4",
+    "node-fetch": "^3.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-phone-input-2": "^2.15.1",
+    "react-phone-number-input": "^3.4.12",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.2.6",
@@ -27,8 +41,11 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@svgr/webpack": "^8.1.0",
     "@tailwindcss/postcss": "^4.0.15",
-    "@types/node": "^20",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@types/node": "^20.17.30",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/react-slick": "^0.23.13",
@@ -37,6 +54,7 @@
     "eslint-config-next": "15.2.4",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.0.15",
-    "typescript": "^5"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }

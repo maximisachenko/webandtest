@@ -16,7 +16,7 @@ const ReviewCard = ({ name, post, text, date, rating, src }: Props) => {
         <div className='bg-white rounded-[20px] reviews-card-shadow pr-12 overflow-hidden my-4 mx-4 max-[1262px]:pr-8 max-md:my-10 max-md:p-6'>
             <div className='flex gap-12 max-md:flex-col max-md:justify-center max-md:items-center max-md:gap-0'>
                 <div className='relative flex flex-col justify-end'>
-                    <div className='bg-primary h-44 w-54 rounded-tr-[78px] max-[1344px]:h-58 max-[1247px]:h-44 max-[1247px]:w-48 max-[655px]:h-48 max-md:hidden' />
+                    <div className='bg-primary h-44 w-54 rounded-tr-[78px] max-[1281px]:h-44 max-[1281px]:w-48 max-[1344px]:h-58 max-[1247px]:h-44 max-[1247px]:w-48 max-[655px]:h-48 max-md:hidden' />
                     <div className='absolute h-[95%] max-[1344px]:w-[120%] max-[696px]:w-[130%] max-[655px]:w-[120%] max-[655px]:h-[85%] max-md:relative'>
                         <Image
                             src={src}

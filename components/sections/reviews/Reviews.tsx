@@ -1,17 +1,35 @@
 'use client';
 
 import { Container, Description, Heading, SectionTitle, Slider } from '@/components/ui';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/Carousel';
 import ReviewCard from './ReviewCard';
 import { REVIEWERS } from '@/constants/reviewers';
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Reviews = () => {
 
+    useEffect(() => {
+        gsap.from(".reviews-content", {
+            scrollTrigger: {
+                trigger: ".reviews-content",
+                start: "top 80%",
+                toggleActions: "play none none none",
+            },
+            opacity: 0,
+            y: 100,
+            duration: 2,
+            ease: "power2.out",
+        });
+    }, [])
+
     return (
-        <Container type={'default'} colorContainer={'white'} className='max-xl:px-24 max-lg:px-16 max-sm:px-6 max-md:px-30'>
+        <Container type={'default'} colorContainer={'white'} className='reviews-content max-xl:px-24 max-lg:px-16 max-sm:px-6 max-md:px-30'>
             <div className='flex flex-col gap-16 max-md:gap-8'>
                 <div className='flex flex-col items-center text-center'>
                     <SectionTitle title='Reviews' />

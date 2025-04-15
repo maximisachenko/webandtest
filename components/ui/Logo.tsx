@@ -9,7 +9,9 @@ interface Props {
 
 const Logo = ({ width, height, className }: Props) => {
     return (
-        <Image src="/assets/icons/webandlogo.svg" width={width} height={height} alt="Weband Logo" className={`cursor-pointer ${className}`} />
+        <a href='/' className='cursor-pointer'>
+            <Image src="/assets/icons/webandlogo.svg" width={width} height={height} alt="Weband Logo" className={`cursor-pointer ${className}`} />
+        </a>
     )
 }
 

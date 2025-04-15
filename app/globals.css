@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -12,6 +13,7 @@
 
 @theme {
   --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
   --background-color-second: var(--second-background);
   --background-color-card: var(--card);
   --background-color-card-hover: var(--card-hover);
@@ -43,20 +45,21 @@ button {
   cursor: pointer;
 }
 
-li {
-  position: relative;
-  transition: color 0.3s ease;
-}
-
 li:hover {
   color: var(--primary);
   transition: color 0.2s ease;
 }
 
-li::after {
+li a {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+}
+
+li a::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -4px;
   left: 0;
   width: 0;
   height: 1px;
@@ -64,9 +67,76 @@ li::after {
   transition: width 0.3s ease;
 }
 
-li:hover::after {
+li a:hover::after {
   width: 100%;
 }
+
+.container {
+  width: 300px;
+  padding-inline: 16px;
+  padding-block: 12px;
+  font-weight: 500;
+
+}
+
+.react-tel-input input {
+  width: 100% !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  padding-inline: 50px !important;
+  padding-block: 24px !important;
+  border-radius: 10px !important;
+}
+
+/* Обычное состояние: скругление только для левой стороны */
+.react-tel-input .flag-dropdown {
+  border-top-left-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
+  border-radius: 10px 0 0 10px !important;
+}
+.react-tel-input .flag-dropdown:hover,
+.react-tel-input .flag-dropdown:focus {
+  border-radius: 10px 0 0 10px !important; 
+}
+
+.react-tel-input .flag-dropdown.open {
+  border-radius: 10px 0 0 10px !important; 
+}
+
+/* Для выбранного флага */
+.react-tel-input .selected-flag {
+  border-radius: 10px 0 0 10px !important;
+}
+
+.form-button {
+  display: flex;
+  background-color: var(--primary);
+  padding-inline: 16px;
+  padding-block: 12px;
+  font-size: 16px;
+  color: white;
+  font-weight: 700;
+  border-radius: 9px;
+}
+
+.chatbot-popup-shadow {
+  box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
+}
+
+.chatbot-form-shadow {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.06);
+}
+
+.chatbot-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(252, 223, 221, 0.5) transparent;
+}
+
+
+
+
+
 
 .directions-btn {
   display: flex;
@@ -143,6 +213,15 @@ li:hover::after {
   box-shadow: 3px 4px 15px rgba(0, 0, 0, 0.25);
 }
 
+.about-us-card-shadow {
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.10);
+  transition: all 0.2s linear 0s;
+}
+
+.about-us-card-shadow:hover {
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.20);
+}
+
 .cases-card-shadow {
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.2s linear 0s;
@@ -166,6 +245,11 @@ li:hover::after {
   transition: all 0.2s linear 0s;
 }
 
+.contact-form-shadow {
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s linear 0s;
+}
+
 .reviews-card-shadow:hover {
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -176,6 +260,25 @@ li:hover::after {
 
 .reviews-card-shadow:hover .img {
   transform: scale(1.1);
+}
+
+.about-us-card {
+  cursor: default;
+}
+
+.about-us-card:hover h1,
+.about-us-card:hover h2 {
+  color: white;
+}
+
+.about-us-card:hover p {
+  color: white;
+  opacity: 50%;
+}
+
+.about-us-card:hover btn {
+  background-color: white;
+  color: var(--primary);
 }
 
 

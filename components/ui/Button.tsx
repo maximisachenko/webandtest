@@ -17,7 +17,7 @@ const Button = ({ title, icon, section, iconWidth, iconHeight, className }: Prop
                 section === 'directions' ? 'directions-btn' :
                     section === 'team' ? 'team-button' :
                         section === 'cases' ? 'cases-btn' :
-                            section === 'form' ? 'form-button' :
+                            section === 'form' ? 'form-button primary-button' :
                                 section === 'footer' ? 'footer-button' : '';
 
     return (

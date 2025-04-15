@@ -9,5 +9,7 @@ import Description from "./Description";
 import Slider from "./slider/Slider"
 import SliderButton from "./slider/SliderButton";
 import SocialButton from "./SocialButton";
+import ContactInfo from "./ContactInfo";
+import Chatbot from "./chatbot/Chatbot";
 
-export { Logo, Heading, SectionTitle, Button, CarouselButton, Container, Circle, Description, Slider, SliderButton, SocialButton };
+export { Logo, Heading, ContactInfo, Chatbot, SectionTitle, Button, CarouselButton, Container, Circle, Description, Slider, SliderButton, SocialButton };

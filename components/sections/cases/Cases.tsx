@@ -11,7 +11,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Cases = () => {
 
-
     useEffect(() => {
         gsap.from(".cases-content", {
             scrollTrigger: {

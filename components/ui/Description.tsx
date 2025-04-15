@@ -7,7 +7,7 @@ interface Props {
 
 const Description = ({ text, className }: Props) => {
     return (
-        <p className={`text-black/40 text-xl text-medium max-md:text-[16px] ${className}`}>{text}</p>
+        <p className={`text-black/40 text-xl text-light max-md:text-[16px] ${className}`}>{text}</p>
     )
 }
 
