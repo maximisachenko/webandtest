@@ -19,12 +19,11 @@ const ChatbotForm = ({ setChatHistory, chatHistory, generateBotResponse }: Props
         if (!userMessage) return;
         if (inputRef.current) inputRef.current.value = '';
 
-        setChatHistory((history: any) => [...history, { role: 'user', text: userMessage }]);
-
-        setTimeout(() => setChatHistory((history: any) => [...history, { role: 'bot', text: "Thinking..." }]), 600);
-
-        generateBotResponse([...chatHistory, { role: 'user', text: userMessage }])
+        const updatedHistory = [...chatHistory, { role: 'user', text: userMessage }, { role: 'model', text: 'Thinking...' }];
+        setChatHistory(updatedHistory);
+        generateBotResponse(updatedHistory);
     };
+
 
     return (
         <form

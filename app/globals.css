@@ -133,11 +133,6 @@ li a:hover::after {
   scrollbar-color: rgba(252, 223, 221, 0.5) transparent;
 }
 
-
-
-
-
-
 .directions-btn {
   display: flex;
   gap: 6px;

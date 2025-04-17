@@ -1,14 +1,35 @@
+'use client';
+
 import { Container, Description, Heading } from '@/components/ui'
-import React from 'react'
+import React, { useEffect } from 'react'
 import ContactInfo from '../../ui/ContactInfo'
 import { CONTACT_INFO } from '@/constants/info'
 import Form from './Form';
 
+import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const ContactForm = () => {
+
+    useEffect(() => {
+        gsap.from(".contact-form-content", {
+            scrollTrigger: {
+                trigger: ".contact-form-content",
+                start: "top 80%",
+                toggleActions: "play none none none",
+            },
+            opacity: 0,
+            y: 100,
+            duration: 2,
+            ease: "power2.out",
+        });
+    }, [])
 
     return (
         <Container type='default' colorContainer='gray' className='max-xl:px-24 max-lg:px-16 max-sm:px-6 max-md:px-30'>
-            <div className='flex flex-col gap-16'>
+            <div className='flex flex-col gap-16 contact-form-content'>
                 <div className='flex flex-col gap-2 items-center justify-center text-center'>
                     <Heading primaryTitle='Get' foregroundTitle='in touch' />
                     <Description className='w-125 max-[580px]:max-w-full' text='We’re always ready to collaborate and turn ideas into reality. Drop us a message, and let’s build something great together!' />

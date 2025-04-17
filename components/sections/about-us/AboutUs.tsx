@@ -1,14 +1,36 @@
+'use client';
+
 import { Container, Description, Heading, SectionTitle } from '@/components/ui'
-import React from 'react'
+import React, { useEffect } from 'react'
 import InfoCard from './InfoCard'
 import { COMPANY_INFORMATION } from '@/constants/companyinformation'
+
+import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+
+gsap.registerPlugin(ScrollTrigger);
 
 
 const AboutUs = () => {
 
+    useEffect(() => {
+        gsap.from(".about-us-content", {
+            scrollTrigger: {
+                trigger: ".about-us-content",
+                start: "top 80%",
+                toggleActions: "play none none none",
+            },
+            opacity: 0,
+            y: 100,
+            duration: 2,
+            ease: "power2.out",
+        });
+    }, [])
+
     return (
         <Container type={'default'} colorContainer={'gray'} className='max-xl:px-24 max-lg:px-16 max-sm:px-6 max-md:px-30'>
-            <div>
+            <div className='about-us-content'>
                 <div className='flex max-[1130px]:justify-center'>
                     <SectionTitle title='About company' />
                 </div>

@@ -13,7 +13,6 @@ export default function Home() {
       <Reviews />
       <AboutUs />
       <ContactForm />
-      <Chatbot />
     </div>
   );
 }
