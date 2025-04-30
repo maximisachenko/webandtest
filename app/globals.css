@@ -182,6 +182,23 @@ li a:hover::after {
   color: var(--primary-hover);
 }
 
+.blog-btn {
+  display: flex;
+  gap: 4px;
+  justify-items: center;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 600;
+  background-color: transparent;
+  color: var(--primary);
+  transition: all 0.2s linear 0s;
+}
+
+.blog-btn:hover {
+  gap:8px;
+  color: var(--primary-hover);
+}
+
 .primary-button {
   transition: all 0.2s linear 0s;
 }
@@ -246,7 +263,7 @@ li a:hover::after {
 }
 
 .reviews-card-shadow:hover {
-  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .reviews-card-shadow .img {
@@ -332,6 +349,44 @@ li a:hover::after {
   line-height: 1.25;
 }
 
+.reward-card-shadow {
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s linear 0s;
+}
+
+.blog-card-shadow {
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s linear 0s;
+}
+
+.blog-card-shadow:hover {
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.form-shadow {
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s linear 0s;
+}
+
+.reward-card-button {
+  display: flex;
+  gap: 4px;
+  justify-items: center;
+  font-size: 16px;
+  line-height: 1.25;
+  background-color: var(--primary);
+  color: var(--background);
+  padding-inline: 16px;
+  padding-block: 12px;
+  border-radius: 9px;
+  font-weight: 600;
+  transition: all 0.2s linear 0s;
+}
+
+.reward-card-button:hover {
+  background-color: var(--primary-hover);
+}
+
 .filter {
   display: flex;
   justify-content: center;
@@ -378,7 +433,7 @@ li a:hover::after {
 }
 
 .directions-card-container {
-  width: 204;
+  width: 300px;
 }
 
 .directions-sm-btn {
@@ -522,4 +577,36 @@ li a:hover::after {
   .directions-card-container {
     width: 204;
   }
+
+  .blog-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 14px;
+    padding-inline: 14px;
+    padding-block: 10px;
+    font-size:16px;
+    transition: all 0.3s ease;
+  }
+
+  .blog-btn:hover {
+    background-color: var(--primary-hover);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 10s linear infinite;
 }

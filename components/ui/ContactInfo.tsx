@@ -1,14 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
+import { ContactInfoProps } from '@/types';
 
-interface Props {
-    section: string;
-    title: string;
-    src: string;
-    infoText: string;
-}
-
-const ContactInfo = ({ title, src, infoText, section }: Props) => {
+const ContactInfo = ({ title, src, infoText, section }: ContactInfoProps) => {
     const textColor = section === 'footer' ? 'text-primary' : section === 'contact-form' ? 'text-white' : '';
     return (
         <div className='flex gap-4 items-center max-[360px]:gap-2'>

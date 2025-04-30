@@ -1,0 +1,30 @@
+import { PARTNERS } from '@/constants/companyinformation';
+import React from 'react';
+
+
+const CompaniesCarousel = () => {
+    return (
+        <div className="bg-second-background py-9 overflow-hidden relative w-full flex items-center">
+            <div className="flex w-max animate-scroll gap-16 items-center">
+                {PARTNERS.map((logo, index) => (
+                    <img
+                        key={index}
+                        src={logo.src}
+                        alt={`Company ${logo.name}`}
+                        className="h-10 object-contain"
+                    />
+                ))}
+                {PARTNERS.map((logo, index) => (
+                    <img
+                        key={`dup-${index}`}
+                        src={logo.src}
+                        alt={`Company duplicate ${logo.name}`}
+                        className="h-10 object-contain"
+                    />
+                ))}
+            </div>
+        </div>
+    );
+};
+
+export default CompaniesCarousel;

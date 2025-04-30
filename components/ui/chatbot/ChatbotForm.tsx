@@ -2,14 +2,9 @@
 
 import React, { useRef, useState } from 'react';
 import Image from 'next/image';
+import { ChatbotFormProps } from '@/types';
 
-interface Props {
-    setChatHistory: any;
-    generateBotResponse: any;
-    chatHistory: any;
-}
-
-const ChatbotForm = ({ setChatHistory, chatHistory, generateBotResponse }: Props) => {
+const ChatbotForm = ({ setChatHistory, chatHistory, generateBotResponse }: ChatbotFormProps) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const [isValid, setIsValid] = useState(false);
 

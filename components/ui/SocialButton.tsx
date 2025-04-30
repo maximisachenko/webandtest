@@ -2,14 +2,9 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { SocialButtonProps } from '@/types';
 
-interface Props {
-    title: string;
-    section: string;
-    src?: string;
-}
-
-const SocialButton = ({ title, section, src }: Props) => {
+const SocialButton = ({ title, section, src }: SocialButtonProps) => {
     const [isHovered, setIsHovered] = useState(false);
 
     const handleMouseEnter = () => {
@@ -20,7 +15,7 @@ const SocialButton = ({ title, section, src }: Props) => {
         setIsHovered(false);
     };
 
-    const sectionClasses = section === 'hero' ? 'w-12 h-12' : section === 'team' ? 'w-7 h-7' : '';
+    const sectionClasses = section === 'hero' ? 'w-9 h-9' : section === 'team' ? 'w-7 h-7' : '';
 
     return (
         <div
@@ -31,8 +26,8 @@ const SocialButton = ({ title, section, src }: Props) => {
             <a href='/'>
                 <Image
                     src={`/assets/icons/hero-${title}.svg`}
-                    width={48}
-                    height={48}
+                    width={24}
+                    height={24}
                     alt={title}
                     className={`absolute w-full h-full transition-opacity duration-500 ${isHovered ? 'opacity-0' : 'opacity-100'}`}
                 />
@@ -40,8 +35,8 @@ const SocialButton = ({ title, section, src }: Props) => {
             <a href='/'>
                 <Image
                     src={`/assets/icons/hero-${title}-hover.svg`}
-                    width={48}
-                    height={48}
+                    width={24}
+                    height={24}
                     alt={`${title} hover`}
                     className={`absolute w-full h-full transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
                 />

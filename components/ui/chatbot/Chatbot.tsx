@@ -5,13 +5,7 @@ import { useState } from 'react';
 import ChatbotForm from './ChatbotForm';
 import ChatMessage from './ChatMessage';
 import { ABOUT_COMPANY } from '@/constants/companyinformation';
-
-interface ChatItem {
-    role: 'user' | 'model';
-    text: string;
-    isError?: boolean;
-    hideInChat?: boolean;
-}
+import { ChatItem } from '@/types';
 
 const Chatbot = () => {
 

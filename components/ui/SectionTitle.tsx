@@ -1,11 +1,8 @@
 import React from 'react'
 import { Circle } from '.'
+import { SectionTitleProps } from '@/types';
 
-interface Props {
-    title: string;
-}
-
-const SectionTitle = ({ title }: Props) => {
+const SectionTitle = ({ title }: SectionTitleProps) => {
     return (
         <div className='w-fit bg-transparent border-[1px] rounded-[18px] border-black/30 flex items-center mb-12'>
             <div className='flex items-center gap-1 px-5 py-[6px]'>

@@ -1,18 +1,10 @@
-import CaseCard from "./cases/CaseCard";
-import Cases from "./cases/Cases";
-import TechnologyCircle from "./cases/TechnologyCircle";
-import DirectionCard from "./directions/DirectionCard";
-import Directions from "./directions/Directions";
-import Hero from "./hero/Hero";
-import ReviewCard from "./reviews/ReviewCard";
-import Reviews from "./reviews/Reviews";
-import MemberCard from "./team/MemberCard";
-import Team from "./team/Team";
-import AboutUs from "./about-us/AboutUs";
-import InfoCard from "./about-us/InfoCard";
-import ContactForm from "./contact-form/ContactForm";
-import Form from "./contact-form/Form";
+import AboutUs from './about-us/AboutUs';
+import Cases from './cases/Cases';
+import Directions from './directions/Directions';
+import Hero from './hero/Hero';
+import Reviews from './reviews/Reviews';
+import Team from './team/Team';
+import Blog from './blog/Blog';
+import ContactForm from './contact-form/ContactForm';
 
-export { CaseCard, DirectionCard, ReviewCard, MemberCard, Cases, TechnologyCircle, 
-    Directions, Form, InfoCard, ContactForm, Reviews, Team, Hero, AboutUs }
-
+export { AboutUs, Cases, Directions, Hero, Reviews, Team, Blog, ContactForm };

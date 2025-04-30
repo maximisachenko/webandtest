@@ -1,11 +1,7 @@
 import React from 'react'
+import { HamburgerProps } from '@/types'
 
-interface Props {
-    onClick: React.MouseEventHandler;
-    children: React.ReactNode;
-}
-
-const Hamburger = ({ onClick, children }: Props) => {
+const Hamburger = ({ onClick, children }: HamburgerProps) => {
     return (
         <div onClick={onClick} className='md:hidden'>
             {children}

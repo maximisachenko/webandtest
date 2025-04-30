@@ -1,15 +1,15 @@
 export const COMPANY_INFORMATION = [
-    { firstTitle: 'CREATION', secondTitle: 'DATE', preTitle: 'Weband company was founded in 2019', 
+    { firstTitle: 'OUR', secondTitle: 'MISSION', preTitle: 'We don’t just deploy AI — we engineer it to outthink markets.', 
     description: 'Since our inception in 2019, we has been dedicated to delivering innovative web solutions.',
-    iconSrc: '/assets/icons/creationdate.png'},
+    iconSrc: '/assets/icons/ai_brain.svg'},
 
-    { firstTitle: 'CREATION', secondTitle: 'DATE', preTitle: 'Weband company was founded in 2019', 
+    { firstTitle: 'ABOUT', secondTitle: 'TEAM', preTitle: 'Weband company was founded in 2019', 
         description: 'Since our inception in 2019, we has been dedicated to delivering innovative web solutions.',
-        iconSrc: '/assets/icons/creationdate.png'},
+        iconSrc: '/assets/icons/ourteam.svg'},
 
-        { firstTitle: 'CREATION', secondTitle: 'DATE', preTitle: 'Weband company was founded in 2019', 
+        { firstTitle: 'OUR', secondTitle: 'EXPERIENCE', preTitle: 'Weband company was founded in 2019', 
             description: 'Since our inception in 2019, we has been dedicated to delivering innovative web solutions.',
-            iconSrc: '/assets/icons/creationdate.png'}
+            iconSrc: '/assets/icons/experience.svg'}
 ]
 
 export const ABOUT_COMPANY = `Weband — международная технологическая компания, основанная в 2019 году, с центральным офисом в Бялостоке, Польша. С момента основания компания реализовала более 50 успешных проектов в сферах финансовых технологий (Fintech), искусственного интеллекта (AI) и робототехники (Robotics). Мы помогаем бизнесам ускорять цифровую трансформацию, внедряя инновационные решения, сочетающие эффективность, безопасность и масштабируемость.
@@ -31,3 +31,20 @@ export const ABOUT_COMPANY = `Weband — международная технол
 📍 Адрес: Grottgera str 3, 15-225 Bialystok, Poland  
 📞 Телефон: +375 (29) 541-20-57  
 📧 Email: webandteam@gmail.com`;
+
+export const CERTIFICATE_INFO = [
+    { title: 'Certificate', description: 'Certificate for the best website of 2025 in the category "Innovation in design and user experience".'},
+    { title: 'Certificate', description: 'Certificate for the best website of 2025 in the category "Innovation in design and user experience".'},
+    { title: 'Certificate', description: 'Certificate for the best website of 2025 in the category "Innovation in design and user experience".'},
+]
+
+export const PARTNERS = [
+    { name: 'Visa', src: '/assets/icons/visalogo.svg',},
+    { name: 'Visa', src: '/assets/icons/visalogo.svg',},
+    { name: 'Visa', src: '/assets/icons/visalogo.svg',},
+    { name: 'Visa', src: '/assets/icons/visalogo.svg',},
+    { name: 'Visa', src: '/assets/icons/visalogo.svg',},
+    { name: 'Visa', src: '/assets/icons/visalogo.svg',},
+    { name: 'Visa', src: '/assets/icons/visalogo.svg',},
+    { name: 'Visa', src: '/assets/icons/visalogo.svg',},
+]

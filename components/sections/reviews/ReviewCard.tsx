@@ -1,19 +1,11 @@
 import { Circle } from '@/components/ui'
 import React from 'react'
 import Image from 'next/image'
+import { ReviewCardProps } from '@/types';
 
-interface Props {
-    name: string;
-    post: string;
-    text: string;
-    src: string;
-    date: string;
-    rating?: number;
-}
-
-const ReviewCard = ({ name, post, text, date, rating, src }: Props) => {
+const ReviewCard = ({ name, post, text, date, rating, src }: ReviewCardProps) => {
     return (
-        <div className='bg-white rounded-[20px] reviews-card-shadow pr-12 overflow-hidden my-4 mx-4 max-[1262px]:pr-8 max-md:my-10 max-md:p-6'>
+        <div className='bg-white rounded-[20px] reviews-card-shadow pr-12 overflow-hidden my-4 mx-4 max-[1262px]:pr-8 max-md:my-10 max-md:p-6 cursor-default hover:scale-101 transition-all duration-300'>
             <div className='flex gap-12 max-md:flex-col max-md:justify-center max-md:items-center max-md:gap-0'>
                 <div className='relative flex flex-col justify-end'>
                     <div className='bg-primary h-44 w-54 rounded-tr-[78px] max-[1281px]:h-44 max-[1281px]:w-48 max-[1344px]:h-58 max-[1247px]:h-44 max-[1247px]:w-48 max-[655px]:h-48 max-md:hidden' />
@@ -37,11 +29,16 @@ const ReviewCard = ({ name, post, text, date, rating, src }: Props) => {
                     </div>
                 </div>
                 <div className='mt-12 mb-6 max-md:mt-4 max-md:flex max-md:flex-col max-md:justify-center max-md:items-center max-md:text-center max-md:mb-0'>
-                    <h1 className='font-semibold text-xl text-black'>{name}</h1>
-                    <div className='flex gap-1 items-center mb-5 max-md:mb-6'>
-                        <Circle className='max-md:hidden' />
-                        <h2 className='font-bold text-sm text-black/30 max-md:font-medium'>{post}</h2>
+                    <div className="flex items-center justify-between mb-4">
+                        <div>
+                            <h1 className="font-semibold text-xl text-black">{name}</h1>
+                            <div className="flex gap-1 items-center max-md:mb-6 max-md:justify-center">
+                                <Circle className="max-md:hidden" />
+                                <h2 className="font-bold text-sm text-black/30 max-md:font-medium max-md:text-center">{post}</h2>
+                            </div>
+                        </div>
                     </div>
+
                     <p className='font-light text-[16px] text-black/40 mb-6 max-md:mb-8'>{text}</p>
                     <div className='flex justify-between items-center font-semibold text-[16px] max-[1373px]:text-sm max-[1344px]:flex-col max-[1344px]:text-[16px] max-[1344px]:gap-2 max-[1281px]:flex-row max-[1281px]:justify-between max-md:flex-col'>
                         <div className='flex items-center gap-1'>

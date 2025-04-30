@@ -1,15 +1,10 @@
 import Image from 'next/image'
 import React from 'react'
+import { DirectionCardProps } from '@/types';
 
-interface Props {
-    title: string;
-    description: string;
-    src: string;
-}
-
-const DirectionCard = ({ title, description, src }: Props) => {
+const DirectionCard = ({ title, preTitle, description, src }: DirectionCardProps) => {
     return (
-        <div className='flex flex-col items-center justify-center text-center w-51 directions-card-container'>
+        <div className='flex flex-col items-center justify-center text-center w-full directions-card-container'>
             <div className="directions-card relative w-51 h-51 rounded-[15px] overflow-hidden mb-4 directions-image">
                 <Image
                     src={src}
@@ -19,7 +14,8 @@ const DirectionCard = ({ title, description, src }: Props) => {
                 />
             </div>
             <h1 className='text-xl text-black font-semibold mb-2 directions-title'>{title}</h1>
-            <p className='text-[16px] font-light text-black/40 directions-description'>{description}</p>
+            <h2 className='text-lg text-black/80 font-medium mb-2'>{preTitle}</h2>
+            <p className='text-[16px] font-light text-black/40 directions-description mb-4'>{description}</p>
         </div>
     )
 }

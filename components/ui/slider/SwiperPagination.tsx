@@ -1,11 +1,5 @@
 import React from "react";
-import { useSwiper } from "swiper/react";
-
-interface SwiperPaginationProps {
-    totalSlides: number;
-    currentIndex: number;
-    onDotClick?: (index: number) => void;
-}
+import { SwiperPaginationProps } from '@/types';
 
 const SwiperPagination: React.FC<SwiperPaginationProps> = ({
     totalSlides,

@@ -7,12 +7,9 @@ import SwiperPagination from "./SwiperPagination";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import { SliderProps } from '@/types';
 
-interface Props {
-    children: React.ReactNode; // children, которые будут переданы
-}
-
-export default function Slider({ children }: Props): JSX.Element {
+export default function Slider({ children }: SliderProps): JSX.Element {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const [swiperInstance, setSwiperInstance] = useState<any>(null);
 

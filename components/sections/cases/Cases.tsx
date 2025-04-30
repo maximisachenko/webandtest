@@ -5,7 +5,7 @@ import React, { useEffect } from 'react'
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { OUR_PROJECTS } from '@/constants/projects'
-import { CaseCard } from '..';
+import CaseCard from './CaseCard';
 
 gsap.registerPlugin(ScrollTrigger);
 

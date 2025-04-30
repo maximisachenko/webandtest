@@ -1,14 +1,8 @@
 import React from 'react'
 import Image from 'next/image';
+import { TechnologyCircleProps } from '@/types';
 
-interface Props {
-    name: string;
-    src: string;
-    width: number;
-    height: number;
-}
-
-const TechnologyCircle = ({ name, src, width, height }: Props) => {
+const TechnologyCircle = ({ name, src, width, height }: TechnologyCircleProps) => {
     return (
         <div className='
             w-9 h-9 

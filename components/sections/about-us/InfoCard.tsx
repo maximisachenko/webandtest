@@ -1,18 +1,11 @@
 import { Button } from '@/components/ui'
 import React from 'react'
 import Image from 'next/image'
+import { AboutUsInfoCardProps } from '@/types'
 
-interface Props {
-    firstTitle: string;
-    secondTitle: string;
-    preTitle: string;
-    description: string;
-    iconSrc: string;
-}
-
-const InfoCard = ({ firstTitle, secondTitle, preTitle, description, iconSrc }: Props) => {
+const InfoCard = ({ firstTitle, secondTitle, preTitle, description, iconSrc }: AboutUsInfoCardProps) => {
     return (
-        <div className='bg-white hover:bg-white duration-300 rounded-tl-[34px] rounded-bl-[34px] px-8 pt-8 pb-4 about-us-card-shadow w-85 max-[420px]:max-w-full'>
+        <div className='bg-white hover:bg-white duration-300 rounded-tl-[34px] rounded-bl-[34px] px-8 pt-8 pb-6 about-us-card-shadow w-85 max-[420px]:max-w-full cursor-default hover:scale-105 transition-all'>
             <span className='flex items-center gap-2 mb-8'>
                 <h1 className='text-2xl text-black font-bold'>{firstTitle}</h1>
                 <h1 className='text-2xl text-primary font-bold'>{secondTitle}</h1>

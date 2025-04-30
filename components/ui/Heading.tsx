@@ -1,13 +1,7 @@
+import { HeadingProps } from '@/types';
 import React from 'react'
 
-interface Props {
-    primaryTitle: string;
-    foregroundTitle: string;
-    additionalTitle?: string;
-    className?: string;
-}
-
-const Heading = ({ primaryTitle, foregroundTitle, additionalTitle, className }: Props) => {
+const Heading = ({ primaryTitle, foregroundTitle, additionalTitle, className }: HeadingProps) => {
 
     return (
         <div className={`text-[40px] font-semibold ${className} max-md:text-[32px] max-sm:text-[32px]`}>

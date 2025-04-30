@@ -2,29 +2,21 @@
 
 import { Circle, SocialButton } from '@/components/ui';
 import { OUR_SOCIALS_TEAM } from '@/constants/socials';
+import { MemberCardProps } from '@/types';
 import Image from 'next/image';
 import React from 'react';
 
-interface Props {
-    name: string;
-    post: string;
-    photoSrc: string;
-    iconWidth: number;
-    iconHeight: number;
-    iconSrc: string;
-}
-
-const MemberCard = ({ name, post, iconHeight, iconWidth, iconSrc, photoSrc }: Props) => {
+const MemberCard = ({ name, post, iconHeight, iconWidth, iconSrc, photoSrc }: MemberCardProps) => {
     return (
         <div className='flex justify-center items-center'>
-            <div className='relative w-[291px] rounded-[14px] flex flex-col team-card-shadow max-md:my-10'>
+            <div className='relative w-[291px] rounded-[14px] flex flex-col team-card-shadow max-md:my-10 max-[380px]:w-full max-[380px]:mx-4'>
                 <div className='relative h-[271px] bg-card hover:bg-card-hover duration-300 rounded-t-[14px] group'>
                     <Image
                         src={photoSrc}
                         height={315}
                         width={185}
                         alt='Man'
-                        className='absolute bottom-0 left-1/3 -translate-x-1/2 w-[185px] z-10 rounded-b-[14px] transform group-hover:scale-105 transition-transform duration-300'
+                        className='absolute bottom-0 left-1/3 -translate-x-1/2 w-[185px] z-10 rounded-b-[14px] transform group-hover:scale-105 transition-transform duration-300 max-[380px]:left-[40%]'
                     />
                 </div>
 
@@ -43,7 +35,7 @@ const MemberCard = ({ name, post, iconHeight, iconWidth, iconSrc, photoSrc }: Pr
                                 <h2 className='font-bold text-sm text-black/30'>{post}</h2>
                             </div>
                         </div>
-                        <Image src={iconSrc} width={iconWidth} height={iconHeight} alt={`${post} icon`} />
+                        <Image src={iconSrc} width={iconWidth} height={iconHeight} alt={`${post} icon`} className='max-[380px]:hidden' />
                     </div>
                 </div>
             </div>

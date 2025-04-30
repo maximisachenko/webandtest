@@ -2,17 +2,9 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { ChatMessageProps } from '@/types';
 
-interface Props {
-    chat: {
-        role: 'user' | 'model';
-        text: string;
-        isError?: boolean;
-        hideInChat?: boolean;
-    };
-}
-
-const ChatMessage = ({ chat }: Props) => {
+const ChatMessage = ({ chat }: ChatMessageProps) => {
     const isUser = chat.role === 'user';
 
     return (

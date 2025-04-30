@@ -6,21 +6,14 @@ import { TECHNOLOGIES } from '@/constants/technologies'
 import TechnologyCircle from './TechnologyCircle'
 import { Button } from '@/components/ui'
 import { useIsTablet } from '@/hooks/useIsMobile';
+import { CaseCardProps } from '@/types';
 
-interface Props {
-    title: string;
-    src: string;
-    description: string;
-    techIndexes: number[];
-}
-
-
-const CaseCard = ({ title, src, description, techIndexes }: Props) => {
+const CaseCard = ({ title, src, description, techIndexes }: CaseCardProps) => {
 
     const isTablet = useIsTablet();
 
     return (
-        <div className='p-6 bg-white rounded-3xl cases-card-shadow w-full'>
+        <div className='p-6 bg-white rounded-3xl cases-card-shadow w-full cursor-default hover:scale-105 transition-all duration-300'>
             <div className='bg-card rounded-3xl w-full'>
                 <div className='px-12 pt-6 flex justify-center max-[930px]:px-6 max-[930px]:pt-4'>
                     <Image src={src} width={336} height={205} alt={`${title} preview`} />

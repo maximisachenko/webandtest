@@ -1,16 +1,8 @@
 import React from 'react'
 import Image from 'next/image';
+import { ButtonProps } from '@/types';
 
-interface Props {
-    title: string;
-    section?: 'header' | 'about-us' | 'directions' | 'team' | 'cases' | 'form' | 'footer' | 'hero';
-    icon?: string
-    iconWidth?: number;
-    iconHeight?: number;
-    className?: string;
-}
-
-const Button = ({ title, icon, section, iconWidth, iconHeight, className }: Props) => {
+const Button = ({ title, icon, section, iconWidth, iconHeight, className }: ButtonProps) => {
     const buttonClass =
         section === 'header' ? 'header-hero-btn primary-button' : section === 'hero' ? 'header-hero-btn primary-button' :
             section === 'about-us' ? 'about-us-button' :
@@ -18,7 +10,9 @@ const Button = ({ title, icon, section, iconWidth, iconHeight, className }: Prop
                     section === 'team' ? 'team-button' :
                         section === 'cases' ? 'cases-btn' :
                             section === 'form' ? 'form-button primary-button' :
-                                section === 'footer' ? 'footer-button' : '';
+                                section === 'footer' ? 'footer-button' :
+                                    section === 'reward-card' ? 'reward-card-button' :
+                                        section === 'blog' ? 'blog-btn' : '';
 
     return (
         <button className={`${buttonClass} ${className}`}>

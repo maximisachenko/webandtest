@@ -1,9 +1,8 @@
 'use client';
 
 import React, { useEffect } from 'react'
-import { Button, SocialButton } from '@/components/ui';
+import { Button } from '@/components/ui';
 import { gsap } from 'gsap';
-import { OUR_SOCIALS_HERO } from '@/constants/socials';
 
 const Hero = () => {
     useEffect(() => {
@@ -30,23 +29,18 @@ const Hero = () => {
 
             <div className="absolute top-0 left-0 w-full h-full bg-black/60 z-0" />
 
-            <div className="hero-content relative z-10 flex items-center justify-between h-full mx-54 max-md:justify-center max-md:text-center max-xl:mx-24 max-lg:mx-16 max-sm:mx-12 max-md:mx-30">
-                <div className='flex flex-col gap-5 max-md:items-center'>
-                    <div className='flex flex-col text-7xl font-bold max-sm:text-4xl max-md:text-5xl max-xl:text-6xl'>
-                        <span className='text-white'>Web solutions</span>
-                        <span className='text-primary'>for your business</span>
+            <div className="hero-content relative z-10 flex items-center justify-center text-center h-full mx-54 max-md:justify-center max-md:text-center max-xl:mx-24 max-lg:mx-16 max-sm:mx-12 max-md:mx-30">
+                <div className='flex flex-col justify-center items-center gap-5 max-md:items-center'>
+                    <div className='flex flex-col font-bold'>
+                        <span className='text-white text-7xl max-sm:text-4xl max-md:text-5xl max-xl:text-6xl'>AI Fintech Robotics</span>
+                        <span className='text-primary text-6xl max-sm:text-4xl max-md:text-5xl max-xl:text-6xl'>we build what others can’t</span>
                     </div >
-                    <p className='text-2xl text-white/80 max-sm:text-sm max-lg:text-lg max-xl:text-xl'>We can help you develop your
-                        own project, bring your<br />business on a new level or help support you an already<br />
-                        functioning web application!</p>
-                    <div>
-                        <Button section='hero' title='Contact us' icon='/assets/icons/hero-mail.svg' iconWidth={18} iconHeight={18} />
+                    <p className='text-xl text-white/80 max-w-[75%] -max-sm:text-sm max-lg:text-lg max-xl:text-xl'>We build what others can’t
+                        (from code to competitive edge) 10+ years engineering disruptive solutions for Fortune 500s and startups
+                    </p>
+                    <div className='flex justify-center'>
+                        <Button section='hero' title='Get free consultation' icon='/assets/icons/mail.svg' iconHeight={20} iconWidth={22} />
                     </div>
-                </div>
-                <div className='flex flex-col gap-6 max-md:hidden'>
-                    {OUR_SOCIALS_HERO.map((social, index) => (
-                        <SocialButton key={index} title={social.title} section={social.section} />
-                    ))}
                 </div>
             </div >
         </div >

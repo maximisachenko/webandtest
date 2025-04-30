@@ -4,7 +4,6 @@ import { Container, Description, Heading, SectionTitle } from '@/components/ui'
 import React, { useEffect } from 'react'
 import InfoCard from './InfoCard'
 import { COMPANY_INFORMATION } from '@/constants/companyinformation'
-
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -70,7 +69,7 @@ const AboutUs = () => {
                         ))}
                     </div>
 
-                    <div className='flex max-xl:hidden justify-between items-center w-full'>
+                    <div className='flex max-xl:hidden justify-between items-start w-full'>
                         {COMPANY_INFORMATION.map((info, index) => (
                             <InfoCard
                                 key={index}

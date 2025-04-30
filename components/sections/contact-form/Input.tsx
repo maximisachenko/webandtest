@@ -1,13 +1,10 @@
 'use client';
 
 import React, { useState } from 'react'
+import { InputProps } from '@/types';
 
-interface Props {
-    type: 'text' | 'email' | 'tel';
-}
-
-const Input = ({ type }: Props) => {
-    const inputPlaceholder = type === 'text' ? 'Enter your name' : type === 'email' ? 'Enter your email' : type === 'tel' ? 'Enter your phone' : '';
+const Input = ({ type }: InputProps) => {
+    const inputPlaceholder = type === 'text' ? 'Enter your position' : type === 'email' ? 'Enter your email' : type === 'tel' ? 'Enter your phone' : '';
     const inputTitle = type === 'text' ? 'Your name' : type === 'email' ? 'Your mail' : type === 'tel' ? 'Your phone' : '';
     const [active, setActive] = useState(false);
     const handleClick = () => {

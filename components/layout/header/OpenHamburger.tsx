@@ -1,10 +1,7 @@
 import React from 'react'
+import { OpenHamburgerProps } from '@/types'
 
-interface Props {
-    onClick: React.MouseEventHandler;
-}
-
-const OpenHamburger = ({ onClick }: Props) => {
+const OpenHamburger = ({ onClick }: OpenHamburgerProps) => {
     return (
         <div className='filter hide-on-dekstop' onClick={onClick}>
             <div className='flex flex-col gap-1'>

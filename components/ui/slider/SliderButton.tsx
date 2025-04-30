@@ -1,14 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-import { SwiperClass } from 'swiper/react';
+import { SliderButtonProps } from '@/types';
 
-interface Props {
-    type: 'prev' | 'next';
-    swiper?: SwiperClass | null;
-    className?: string;
-}
-
-const SliderButton: React.FC<Props> = ({ type, swiper, className }) => {
+const SliderButton: React.FC<SliderButtonProps> = ({ type, swiper, className }) => {
 
     const handleClick = () => {
         if (type === 'prev') {

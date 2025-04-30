@@ -2,8 +2,9 @@
 
 import React, { useState } from 'react'
 import { Button, Logo } from '../../ui'
-import { CloseHamburger, Hamburger, OpenHamburger } from '.'
 import Image from 'next/image';
+import OpenHamburger from './OpenHamburger';
+import CloseHamburger from './CloseHamburger';
 
 const Header = () => {
     const [navbar, setNavbar] = useState(false);
