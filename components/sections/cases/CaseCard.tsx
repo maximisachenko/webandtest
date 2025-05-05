@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useEffect } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import { TECHNOLOGIES } from '@/constants/technologies'
-import TechnologyCircle from './TechnologyCircle'
+import TechnologyCircle from './technologyCircle'
 import { Button } from '@/components/ui'
 import { useIsTablet } from '@/hooks/useIsMobile';
 import { CaseCardProps } from '@/types';
@@ -15,7 +15,7 @@ const CaseCard = ({ title, src, description, techIndexes }: CaseCardProps) => {
     return (
         <div className='p-6 bg-white rounded-3xl cases-card-shadow w-full cursor-default hover:scale-105 transition-all duration-300'>
             <div className='bg-card rounded-3xl w-full'>
-                <div className='px-12 pt-6 flex justify-center max-[930px]:px-6 max-[930px]:pt-4'>
+                <div className='px-12 pt-6 cases-card-image flex justify-center max-[930px]:px-6 max-[930px]:pt-4'>
                     <Image src={src} width={336} height={205} alt={`${title} preview`} />
                 </div>
             </div>

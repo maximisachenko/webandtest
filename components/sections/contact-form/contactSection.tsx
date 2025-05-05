@@ -2,16 +2,16 @@
 
 import { Container, Description, Heading } from '@/components/ui'
 import React, { useEffect } from 'react'
-import ContactInfo from '../../ui/ContactInfo'
+import ContactInfo from '../../ui/contactInfo'
 import { CONTACT_INFO } from '@/constants/info'
-import Form from './Form';
+import Form from '../../forms/contactForm';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ContactForm = () => {
+const ContactSection = () => {
 
     useEffect(() => {
         gsap.from(".contact-form-content", {
@@ -29,7 +29,7 @@ const ContactForm = () => {
 
     return (
         <Container type='default' colorContainer='gray' className='max-xl:px-24 max-lg:px-16 max-sm:px-6 max-md:px-30'>
-            <div className='flex flex-col gap-16 contact-form-content'>
+            <div id='contact-form' className='flex flex-col gap-16 contact-form-content'>
                 <div className='flex flex-col gap-2 items-center justify-center text-center'>
                     <Heading primaryTitle='Get' foregroundTitle='in touch' />
                     <Description className='w-125 max-[580px]:max-w-full' text='We’re always ready to collaborate and turn ideas into reality. Drop us a message, and let’s build something great together!' />
@@ -58,4 +58,4 @@ const ContactForm = () => {
     )
 }
 
-export default ContactForm
+export default ContactSection

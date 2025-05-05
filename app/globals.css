@@ -35,6 +35,14 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+div[id] {
+  scroll-margin-top: 128px;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -76,7 +84,6 @@ li a:hover::after {
   padding-inline: 16px;
   padding-block: 12px;
   font-weight: 500;
-
 }
 
 .react-tel-input input {
@@ -89,12 +96,12 @@ li a:hover::after {
   border-radius: 10px !important;
 }
 
-/* Обычное состояние: скругление только для левой стороны */
 .react-tel-input .flag-dropdown {
   border-top-left-radius: 10px !important;
   border-bottom-left-radius: 10px !important;
   border-radius: 10px 0 0 10px !important;
 }
+
 .react-tel-input .flag-dropdown:hover,
 .react-tel-input .flag-dropdown:focus {
   border-radius: 10px 0 0 10px !important; 
@@ -104,7 +111,6 @@ li a:hover::after {
   border-radius: 10px 0 0 10px !important; 
 }
 
-/* Для выбранного флага */
 .react-tel-input .selected-flag {
   border-radius: 10px 0 0 10px !important;
 }
@@ -203,7 +209,6 @@ li a:hover::after {
   transition: all 0.2s linear 0s;
 }
 
-
 .primary-button:hover {
   background-color: var(--primary-hover);
 }
@@ -293,7 +298,6 @@ li a:hover::after {
   color: var(--primary);
 }
 
-
 .directions-card {
   position: relative;
   background-color: var(--card);
@@ -328,8 +332,6 @@ li a:hover::after {
 .directions-card:hover img {
   transform: scale(1.05);
 }
-
-
 
 .hero-button {
   background-color: var(--primary);
@@ -465,7 +467,6 @@ li a:hover::after {
 }
 
 @media (max-width: 1024px) {
-
   .header-button {
     font-size: 14px;
     padding-inline: 12px;
@@ -476,7 +477,6 @@ li a:hover::after {
     font-size: 16px;
   }
 }
-
 
 @media (max-width: 1320px) {
   .directions-heading {

@@ -3,19 +3,14 @@
 import React, { useEffect } from 'react'
 import { Button } from '@/components/ui';
 import { gsap } from 'gsap';
+import { useGsapFadeUp } from '@/hooks/useGsapFadeUp';
 
 const Hero = () => {
-    useEffect(() => {
-        gsap.from(".hero-content", {
-            opacity: 0,
-            y: 100,
-            duration: 2,
-            ease: "power2.out",
-        });
-    }, []);
+    const heroRef = useGsapFadeUp({ trigger: ".hero-content", y: 0, x: 0, opacity: 0, duration: 1.5 });
+    const textRef = useGsapFadeUp({ trigger: ".hero-content", y: 100, x: 0, opacity: 0, duration: 2 });
 
     return (
-        <div className='relative w-full h-screen overflow-hidden'>
+        <div ref={heroRef} className='relative w-full h-screen overflow-hidden'>
             <video
                 autoPlay
                 loop
@@ -29,7 +24,7 @@ const Hero = () => {
 
             <div className="absolute top-0 left-0 w-full h-full bg-black/60 z-0" />
 
-            <div className="hero-content relative z-10 flex items-center justify-center text-center h-full mx-54 max-md:justify-center max-md:text-center max-xl:mx-24 max-lg:mx-16 max-sm:mx-12 max-md:mx-30">
+            <div ref={textRef} className="hero-content relative z-10 flex items-center justify-center text-center h-full mx-54 max-md:justify-center max-md:text-center max-xl:mx-24 max-lg:mx-16 max-sm:mx-12 max-md:mx-30">
                 <div className='flex flex-col justify-center items-center gap-5 max-md:items-center'>
                     <div className='flex flex-col font-bold'>
                         <span className='text-white text-7xl max-sm:text-4xl max-md:text-5xl max-xl:text-6xl'>AI Fintech Robotics</span>

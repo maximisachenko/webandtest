@@ -1,45 +1,39 @@
 'use client';
 
 import { Container, Description, Heading, SectionTitle } from '@/components/ui'
-import React, { useEffect } from 'react'
-import InfoCard from './InfoCard'
+import React from 'react'
+import InfoCard from './aboutUsCard'
 import { COMPANY_INFORMATION } from '@/constants/companyinformation'
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import { useGsapFadeUp } from '@/hooks/useGsapFadeUp';
 
 gsap.registerPlugin(ScrollTrigger);
 
 
 const AboutUs = () => {
-
-    useEffect(() => {
-        gsap.from(".about-us-content", {
-            scrollTrigger: {
-                trigger: ".about-us-content",
-                start: "top 80%",
-                toggleActions: "play none none none",
-            },
-            opacity: 0,
-            y: 100,
-            duration: 2,
-            ease: "power2.out",
-        });
-    }, [])
+    const headingRef = useGsapFadeUp({ trigger: ".about-us-heading", y: 0, x: -150, opacity: 0, duration: 1.5 });
+    const secondHeadingRef = useGsapFadeUp({ trigger: ".about-us-second-heading", y: 0, x: 150, opacity: 0, duration: 1.5 });
+    const descriptionRef = useGsapFadeUp({ trigger: ".about-us-description", y: 0, x: -150, opacity: 0, duration: 1.5 });
+    const cardRef = useGsapFadeUp({ trigger: ".about-us-cards", y: 150, x: -150, opacity: 0, duration: 1.5 });
 
     return (
         <Container type={'default'} colorContainer={'gray'} className='max-xl:px-24 max-lg:px-16 max-sm:px-6 max-md:px-30'>
-            <div className='about-us-content'>
-                <div className='flex max-[1130px]:justify-center'>
+            <div id='about-us' className='about-us-content'>
+                <div ref={headingRef} className='flex about-us-heading max-[1130px]:justify-center'>
                     <SectionTitle title='About company' />
                 </div>
                 <div className='flex justify-between items-center mb-12 max-[1130px]:flex-col max-[1130px]:text-center max-[1130px]:gap-8 max-[1130px]:justify-center'>
-                    <Heading className='w-[575px] max-xl:w-[455px] max-[1130px]:max-w-full' primaryTitle='Our story:' foregroundTitle='Shaping the Future of Web Development.' />
-                    <Description className='w-[461px] max-[1130px]:max-w-full' text='From our humble beginnings to becoming a leading provider of 
+                    <div ref={secondHeadingRef} className='about-us-second-heading'>
+                        <Heading className='w-[575px] max-xl:w-[455px] max-[1130px]:max-w-full' primaryTitle='Our story:' foregroundTitle='Shaping the Future of Web Development.' />
+                    </div>
+                    <div ref={descriptionRef} className='about-us-description'>
+                        <Description className='w-[461px] max-[1130px]:max-w-full' text='From our humble beginnings to becoming a leading provider of 
                     web solutions, our journey has been defined by innovation, 
                     creativity, and a commitment to excellence. ' />
+                    </div>
                 </div>
-                <div className='flex justify-between items-center w-full gap-x-8 
+                <div ref={cardRef} className='flex about-us-cards justify-between items-center w-full gap-x-8 
                                 max-[880px]:flex-col max-[880px]:items-center max-[880px]:!gap-y-12 max-xl:flex-wrap max-xl:gap-y-16 max-xl:mt-16 
                                 '>
 

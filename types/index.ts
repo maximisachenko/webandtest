@@ -44,6 +44,7 @@ export interface LogoProps {
     width: number;
     height: number;
     className?: string;
+    ref?: React.Ref<HTMLImageElement>;
 }
 
 export interface SectionTitleProps {
@@ -111,7 +112,7 @@ export interface OpenHamburgerProps {
     onClick: React.MouseEventHandler;
 }
 
-export interface AboutUsInfoCardProps {
+export interface AboutUsCardProps {
     firstTitle: string;
     secondTitle: string;
     preTitle: string;
@@ -171,4 +172,19 @@ export interface MemberCardProps {
     iconWidth: number;
     iconHeight: number;
     iconSrc: string;
+}
+
+export interface UseGsapFadeUpProps {
+    trigger: string;
+    y: number;
+    x: number;
+    opacity: number;
+    duration: number;
+}
+
+export interface ScaleInOptions {
+    trigger: string;
+    scaleFrom?: number;
+    duration?: number;
+    ease?: string;
 }

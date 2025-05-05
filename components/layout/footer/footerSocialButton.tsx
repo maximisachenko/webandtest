@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { FooterSocialProps } from '@/types';
 
-const FooterSocial = ({ title }: FooterSocialProps) => {
+const FooterSocialButton = ({ title }: FooterSocialProps) => {
     const socialSrc = title === 'Linkedin' ? '/assets/icons/footerlinkedin.svg' :
         title === 'Facebook' ? '/assets/icons/footerfacebook.svg' :
             title === 'Instagram' ? '/assets/icons/footerinstagram.svg' : '';
@@ -14,4 +14,4 @@ const FooterSocial = ({ title }: FooterSocialProps) => {
     )
 }
 
-export default FooterSocial
+export default FooterSocialButton

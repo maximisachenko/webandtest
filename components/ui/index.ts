@@ -1,15 +1,15 @@
-import Logo from "./Logo";
-import { CarouselButton } from "./CarouselButton";
-import Button from "./Button";
-import Heading from "./Heading";
-import Container from "./Container";
-import SectionTitle from "./SectionTitle";
-import Circle from "./Circle";
-import Description from "./Description";
-import Slider from "./slider/Slider"
-import SliderButton from "./slider/SliderButton";
-import SocialButton from "./SocialButton";
-import ContactInfo from "./ContactInfo";
-import Chatbot from "./chatbot/Chatbot";
+import Logo from "./logo";
+import { CarouselButton } from "../sections/reviews/carouselButton";
+import Button from "./button";
+import Heading from "./heading";
+import Container from "./container";
+import SectionTitle from "./sectionTitle";
+import Circle from "./circle";
+import Description from "./description";
+import Slider from "./slider/slider"
+import SliderButton from "./slider/sliderButton";
+import SocialButton from "./socialButton";
+import ContactInfo from "./contactInfo";
+import Chatbot from "./chatbot/chatBot";
 
 export { Logo, Heading, ContactInfo, Chatbot, SectionTitle, Button, CarouselButton, Container, Circle, Description, Slider, SliderButton, SocialButton };

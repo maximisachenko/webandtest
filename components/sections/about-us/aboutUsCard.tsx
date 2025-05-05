@@ -1,11 +1,12 @@
 import { Button } from '@/components/ui'
 import React from 'react'
 import Image from 'next/image'
-import { AboutUsInfoCardProps } from '@/types'
+import { AboutUsCardProps } from '@/types'
 
-const InfoCard = ({ firstTitle, secondTitle, preTitle, description, iconSrc }: AboutUsInfoCardProps) => {
+const AboutUsCard = ({ firstTitle, secondTitle, preTitle, description, iconSrc }: AboutUsCardProps) => {
+
     return (
-        <div className='bg-white hover:bg-white duration-300 rounded-tl-[34px] rounded-bl-[34px] px-8 pt-8 pb-6 about-us-card-shadow w-85 max-[420px]:max-w-full cursor-default hover:scale-105 transition-all'>
+        <div className='bg-white card hover:bg-white duration-300 rounded-tl-[34px] rounded-bl-[34px] px-8 pt-8 pb-6 about-us-card-shadow w-85 max-[420px]:max-w-full cursor-default hover:scale-105 transition-all'>
             <span className='flex items-center gap-2 mb-8'>
                 <h1 className='text-2xl text-black font-bold'>{firstTitle}</h1>
                 <h1 className='text-2xl text-primary font-bold'>{secondTitle}</h1>
@@ -24,4 +25,4 @@ const InfoCard = ({ firstTitle, secondTitle, preTitle, description, iconSrc }: A
     )
 }
 
-export default InfoCard
+export default AboutUsCard

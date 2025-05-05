@@ -1,11 +1,14 @@
 import Image from 'next/image'
 import React from 'react'
 import { DirectionCardProps } from '@/types';
+import { useGsapFadeUp } from '@/hooks/useGsapFadeUp';
 
 const DirectionCard = ({ title, preTitle, description, src }: DirectionCardProps) => {
+    const imageCardRef = useGsapFadeUp({ trigger: ".directions-image", y: 50, x: 0, opacity: 100, duration: 3, });
+
     return (
         <div className='flex flex-col items-center justify-center text-center w-full directions-card-container'>
-            <div className="directions-card relative w-51 h-51 rounded-[15px] overflow-hidden mb-4 directions-image">
+            <div ref={imageCardRef} className="directions-card directions-image relative w-51 h-51 rounded-[15px] overflow-hidden mb-4 directions-image">
                 <Image
                     src={src}
                     alt={`${title} photo`}

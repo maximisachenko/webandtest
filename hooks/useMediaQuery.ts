@@ -8,7 +8,7 @@ const useMediaQuery = (query: string) => {
     const mediaQueryList = window.matchMedia(query)
     const updateMatch = () => setMatches(mediaQueryList.matches)
 
-    updateMatch() // проверяем при монтировании компонента
+    updateMatch()
 
     mediaQueryList.addEventListener('change', updateMatch)
 

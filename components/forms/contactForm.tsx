@@ -1,7 +1,7 @@
 import React from 'react'
-import Input from './Input'
-import CustomPhoneInput from './PhoneInput'
-import Textarea from './Textarea'
+import Input from '../sections/contact-form/input'
+import CustomPhoneInput from '../sections/contact-form/phoneInput'
+import Textarea from '../sections/contact-form/textArea'
 import { Button } from '@/components/ui'
 
 const Form = () => {

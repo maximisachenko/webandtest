@@ -2,10 +2,10 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import ChatbotForm from './ChatbotForm';
-import ChatMessage from './ChatMessage';
+import ChatMessage from './chatMessage';
 import { ABOUT_COMPANY } from '@/constants/companyinformation';
 import { ChatItem } from '@/types';
+import ChatbotForm from '@/components/forms/chatbotForm';
 
 const Chatbot = () => {
 
@@ -31,10 +31,6 @@ const Chatbot = () => {
         });
     };
 
-
-    const geminiApiUrl = process.env.NEXT_PUBLIC_GEMINI_API_URL;
-    const geminiApiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
-
     const generateBotResponse = async (history: any) => {
 
         history = history.map(({ role, text }: any) => ({ role, parts: [{ text }] }));
@@ -46,7 +42,7 @@ const Chatbot = () => {
         };
 
         try {
-            const url = `${geminiApiUrl}?key=${geminiApiKey}`;
+            const url = 'api/gemini';
             const response = await fetch(url, requestOptions);
             const data = await response.json();
             console.log('RESPONSE:', data);

@@ -7,7 +7,7 @@ import { isValidPhoneNumber } from 'react-phone-number-input';
 
 const CustomPhoneInput = () => {
     const [phoneNumber, setPhoneNumber] = useState<string>('');
-    const [valid, setValid] = useState<boolean>(true); // Изначально номер валиден
+    const [valid, setValid] = useState<boolean>(true);
 
     const handleChange = (value: string) => {
         setPhoneNumber(value);

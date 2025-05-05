@@ -3,40 +3,42 @@
 import React, { useState } from 'react'
 import { Button, Logo } from '../../ui'
 import Image from 'next/image';
-import OpenHamburger from './OpenHamburger';
-import CloseHamburger from './CloseHamburger';
+import OpenHamburger from './openHamburger';
+import CloseHamburger from './closeHamburger';
+import { useGsapFadeUp } from '@/hooks/useGsapFadeUp';
+import { useImageFadeIn } from '@/hooks/useImageFadeIn';
 
 const Header = () => {
     const [navbar, setNavbar] = useState(false);
-
     const handleNavbar = () => {
         setNavbar(!navbar);
     }
 
+    const headerRef = useGsapFadeUp({ trigger: ".header", y: 0, x: 0, opacity: 0, duration: 1.5 });
+    const navRef = useGsapFadeUp({ trigger: ".nav", y: 0, x: 150, opacity: 0, duration: 1.5 });
+    const imageRef = useImageFadeIn();
+
     return (
-        <header className='shadow-xl sticky top-0 z-60 bg-white'>
+        <header ref={headerRef} className='shadow-xl header sticky top-0 z-60 bg-white'>
             <div className='flex items-center justify-between pl-16 pr-8 py-8 max-md:p-6 max-lg:pl-12 max-lg:pr-6 max-lg:py-6 max-xl:pl-14 max-xl:pr-7 max-xl:py-7'>
-                <Logo width={181} height={62} className='max-sm:w-[95px] max-sm:h-[28px] max-md:w-[138px] max-md:h-[44px] max-lg:w-[138px] max-lg:h-[44px] max-xl:w-[155px] max-xl:h-[56px]' />
-                <div className='flex gap-16 hide-on-mobile max-lg:gap-6 max-xl:gap-12'>
+                <Logo ref={imageRef} width={181} height={62} className='max-sm:w-[95px] max-sm:h-[28px] max-md:w-[138px] max-md:h-[44px] max-lg:w-[138px] max-lg:h-[44px] max-xl:w-[155px] max-xl:h-[56px]' />
+                <div ref={navRef} className='flex nav gap-16 hide-on-mobile max-lg:gap-6 max-xl:gap-12'>
                     <nav className='flex items-center gap-8'>
                         <ul className='text-black font-semibold flex text-lg gap-8 justify-center max-lg:text-sm max-lg:gap-4 max-xl:text-[16px] max-xl:gap-6'>
                             <li>
-                                <a href='/'>About us</a>
+                                <a href='#about-us'>About us</a>
                             </li>
                             <li>
-                                <a href='/'>Directions</a>
+                                <a href='#directions'>Directions</a>
                             </li>
                             <li>
-                                <a href='/'>Careers</a>
+                                <a href='#cases'>Cases</a>
                             </li>
                             <li>
-                                <a href='/'>Team</a>
+                                <a href='#reviews'>Reviews</a>
                             </li>
                             <li>
-                                <a href='/'>Cases</a>
-                            </li>
-                            <li>
-                                <a href='/'>Reviews</a>
+                                <a href='#blog'>Our blog</a>
                             </li>
                         </ul>
                     </nav>

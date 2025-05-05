@@ -1,9 +1,12 @@
+'use client'
+
 import { ContactInfo, Container, Logo } from '@/components/ui'
 import React from 'react'
-import FooterSocial from './FooterSocial'
+import FooterSocialButton from './footerSocialButton'
 import { CONTACT_INFO_PRIMARY } from '@/constants/info'
 
 const Footer = () => {
+
     return (
         <Container type='default' colorContainer='white' className='max-xl:px-24 max-lg:px-16 max-sm:px-6 max-md:px-30 max-md:pb-6'>
             <div className='flex flex-col gap-8 max-md:gap-16'>
@@ -19,9 +22,9 @@ const Footer = () => {
                             <p className='font-medium text-[16px] text-black/40 w-100 max-[1145px]:w-50 max-[460px]:w-full'>We can help develop your project, elevate your business, or support your existing web application!</p>
                         </div>
                         <div className='flex gap-3'>
-                            <FooterSocial title='Linkedin' />
-                            <FooterSocial title='Facebook' />
-                            <FooterSocial title='Instagram' />
+                            <FooterSocialButton title='Linkedin' />
+                            <FooterSocialButton title='Facebook' />
+                            <FooterSocialButton title='Instagram' />
                         </div>
                     </div>
                     <div className='flex flex-col gap-6'>

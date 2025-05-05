@@ -2,7 +2,7 @@
 
 import { Container, Description, Heading, SectionTitle, Slider } from '@/components/ui'
 import React, { useEffect } from 'react';
-import MemberCard from './MemberCard';
+import MemberCard from './memberCard';
 import { TEAM_MEMBERS } from '@/constants/team'
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
