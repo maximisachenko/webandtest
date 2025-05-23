@@ -1,8 +1,7 @@
 'use client';
 
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Button } from '@/components/ui';
-import { gsap } from 'gsap';
 import { useGsapFadeUp } from '@/hooks/useGsapFadeUp';
 
 const Hero = () => {

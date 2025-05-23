@@ -1,13 +1,13 @@
 import { PARTNERS } from '@/constants/companyinformation';
 import React from 'react';
-
+import Image from 'next/image';
 
 const CompaniesCarousel = () => {
     return (
         <div className="bg-second-background py-9 overflow-hidden relative w-full flex items-center">
             <div className="flex w-max animate-scroll gap-16 items-center">
                 {PARTNERS.map((logo, index) => (
-                    <img
+                    <Image
                         key={index}
                         src={logo.src}
                         alt={`Company ${logo.name}`}
@@ -15,7 +15,7 @@ const CompaniesCarousel = () => {
                     />
                 ))}
                 {PARTNERS.map((logo, index) => (
-                    <img
+                    <Image
                         key={`dup-${index}`}
                         src={logo.src}
                         alt={`Company duplicate ${logo.name}`}

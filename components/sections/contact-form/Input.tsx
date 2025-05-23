@@ -7,9 +7,6 @@ const Input = ({ type }: InputProps) => {
     const inputPlaceholder = type === 'text' ? 'Enter your position' : type === 'email' ? 'Enter your email' : type === 'tel' ? 'Enter your phone' : '';
     const inputTitle = type === 'text' ? 'Your name' : type === 'email' ? 'Your mail' : type === 'tel' ? 'Your phone' : '';
     const [active, setActive] = useState(false);
-    const handleClick = () => {
-        setActive(!active);
-    }
 
     return (
         <div className='flex flex-col gap-2'>
