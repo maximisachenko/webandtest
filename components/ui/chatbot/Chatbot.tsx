@@ -44,6 +44,7 @@ const Chatbot = () => {
         try {
             const url = 'api/gemini';
             const response = await fetch(url, requestOptions);
+            console.log('RESPONSE:', response);
             const data = await response.json();
             console.log('RESPONSE:', data);
             if (!response.ok) throw new Error(data.error?.message || 'Something went wrong!');
