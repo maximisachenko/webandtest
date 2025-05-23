@@ -4,6 +4,7 @@ import { ContactInfo, Container, Logo } from '@/components/ui'
 import React from 'react'
 import FooterSocialButton from './footerSocialButton'
 import { CONTACT_INFO_PRIMARY } from '@/constants/info'
+import Link from 'next/link'
 
 const Footer = () => {
 
@@ -56,7 +57,7 @@ const Footer = () => {
                             Unauthorized use of our intellectual property for machine learning purposes is strictly prohibited.
                             Violators will be subject to legal action.</p>
                     </div>
-                    <a href='/' className='text-black text-[16px] font-semibold cursor-pointer max-md:text-sm max-sm:text-[12px]'>Privacy & Police</a>
+                    <Link href='/' className='text-black text-[16px] font-semibold cursor-pointer max-md:text-sm max-sm:text-[12px]'>Privacy & Police</Link>
                 </div>
             </div>
         </Container>

@@ -3,8 +3,9 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { SocialButtonProps } from '@/types';
+import Link from 'next/link';
 
-const SocialButton = ({ title, section, src }: SocialButtonProps) => {
+const SocialButton = ({ title, section }: SocialButtonProps) => {
     const [isHovered, setIsHovered] = useState(false);
 
     const handleMouseEnter = () => {
@@ -23,7 +24,7 @@ const SocialButton = ({ title, section, src }: SocialButtonProps) => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            <a href='/'>
+            <Link href='/'>
                 <Image
                     src={`/assets/icons/hero-${title}.svg`}
                     width={24}
@@ -31,8 +32,8 @@ const SocialButton = ({ title, section, src }: SocialButtonProps) => {
                     alt={title}
                     className={`absolute w-full h-full transition-opacity duration-500 ${isHovered ? 'opacity-0' : 'opacity-100'}`}
                 />
-            </a>
-            <a href='/'>
+            </Link>
+            <Link href='/'>
                 <Image
                     src={`/assets/icons/hero-${title}-hover.svg`}
                     width={24}
@@ -40,7 +41,7 @@ const SocialButton = ({ title, section, src }: SocialButtonProps) => {
                     alt={`${title} hover`}
                     className={`absolute w-full h-full transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
                 />
-            </a>
+            </Link>
         </div>
     );
 };

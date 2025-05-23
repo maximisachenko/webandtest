@@ -54,7 +54,6 @@ export interface SectionTitleProps {
 export interface SocialButtonProps {
     title: string;
     section: string;
-    src?: string;
 }
 
 export interface SliderProps {

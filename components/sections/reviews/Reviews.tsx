@@ -1,7 +1,7 @@
 'use client';
 
 import { Container, Description, Heading, SectionTitle, Slider } from '@/components/ui';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { gsap } from 'gsap';
@@ -59,6 +59,7 @@ const Reviews = () => {
                     <Slider>
                         {REVIEWERS.map((reviewer, index) => (
                             <ReviewCard
+                                key={index}
                                 name={reviewer.name}
                                 post={reviewer.post}
                                 text={reviewer.text}

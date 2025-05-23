@@ -7,6 +7,7 @@ import OpenHamburger from './openHamburger';
 import CloseHamburger from './closeHamburger';
 import { useGsapFadeUp } from '@/hooks/useGsapFadeUp';
 import { useImageFadeIn } from '@/hooks/useImageFadeIn';
+import Link from 'next/link';
 
 const Header = () => {
     const [navbar, setNavbar] = useState(false);
@@ -26,19 +27,19 @@ const Header = () => {
                     <nav className='flex items-center gap-8'>
                         <ul className='text-black font-semibold flex text-lg gap-8 justify-center max-lg:text-sm max-lg:gap-4 max-xl:text-[16px] max-xl:gap-6'>
                             <li>
-                                <a href='#about-us'>About us</a>
+                                <Link href='#about-us'>About us</Link>
                             </li>
                             <li>
-                                <a href='#directions'>Directions</a>
+                                <Link href='#directions'>Directions</Link>
                             </li>
                             <li>
-                                <a href='#cases'>Cases</a>
+                                <Link href='#cases'>Cases</Link>
                             </li>
                             <li>
-                                <a href='#reviews'>Reviews</a>
+                                <Link href='#reviews'>Reviews</Link>
                             </li>
                             <li>
-                                <a href='#blog'>Our blog</a>
+                                <Link href='#blog'>Our blog</Link>
                             </li>
                         </ul>
                     </nav>
@@ -61,22 +62,22 @@ const Header = () => {
                 <div className='mt-10 flex flex-col gap-12 text-black font-semibold text-lg max-sm:text-[16px]'>
                     <ul className='flex flex-col items-center gap-4 justify-center'>
                         <li>
-                            <a href='/'>About us</a>
+                            <Link href='/'>About us</Link>
                         </li>
                         <li>
-                            <a href='/'>Directions</a>
+                            <Link href='/'>Directions</Link>
                         </li>
                         <li>
-                            <a href='/'>Careers</a>
+                            <Link href='/'>Careers</Link>
                         </li>
                         <li>
-                            <a href='/'>Team</a>
+                            <Link href='/'>Team</Link>
                         </li>
                         <li>
-                            <a href='/'>Cases</a>
+                            <Link href='/'>Cases</Link>
                         </li>
                         <li>
-                            <a href='/'>Reviews</a>
+                            <Link href='/'>Reviews</Link>
                         </li>
                     </ul>
                     <div className='flex justify-center items-center gap-3'>

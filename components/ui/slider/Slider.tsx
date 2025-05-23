@@ -3,6 +3,7 @@
 import React, { useState, JSX } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
+import type { Swiper as SwiperType } from 'swiper';
 import SwiperPagination from "./sliderPagination";
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -11,7 +12,7 @@ import { SliderProps } from '@/types';
 
 export default function Slider({ children }: SliderProps): JSX.Element {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
-    const [swiperInstance, setSwiperInstance] = useState<any>(null);
+    const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
 
     return (
         <div>

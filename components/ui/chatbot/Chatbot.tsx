@@ -7,6 +7,11 @@ import { ABOUT_COMPANY } from '@/constants/companyinformation';
 import { ChatItem } from '@/types';
 import ChatbotForm from '@/components/forms/chatbotForm';
 
+interface GeminiMessage {
+    role: 'model' | 'user';
+    parts: { text: string }[];
+}
+
 const Chatbot = () => {
 
     const [chatHistory, setChatHistory] = useState<ChatItem[]>([
@@ -31,14 +36,16 @@ const Chatbot = () => {
         });
     };
 
-    const generateBotResponse = async (history: any) => {
-
-        history = history.map(({ role, text }: any) => ({ role, parts: [{ text }] }));
+    const generateBotResponse = async (history: ChatItem[]) => {
+        const apiHistory: GeminiMessage[] = history.map(({ role, text }) => ({
+            role,
+            parts: [{ text }]
+        }));
 
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ contents: history })
+            body: JSON.stringify({ contents: apiHistory })
         };
 
         try {
