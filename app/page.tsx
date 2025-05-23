@@ -1,7 +1,14 @@
+import { Directions, Cases, Reviews, Blog, AboutUs, Hero } from "@/components/sections";
+
 export default function Home() {
   return (
-    <div className="text-weband">
-      <h1>Hello world!</h1>
+    <div>
+      <Hero />
+      <Directions />
+      <Cases />
+      <AboutUs />
+      <Reviews />
+      <Blog />
     </div>
   );
 }
