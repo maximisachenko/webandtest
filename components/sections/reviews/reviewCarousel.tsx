@@ -5,9 +5,8 @@ import Image from "next/image"
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react"
-
 import { cn } from "@/lib/utils"
-import { CarouselButton } from "./carouselButton"
+import { CarouselButton } from "./CarouselButton"
 
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
@@ -67,12 +66,19 @@ function Carousel({
     setCanScrollNext(api.canScrollNext())
   }, [])
 
-  const scrollPrev = React.useCallback(() => {
-    api?.scrollPrev()
+  const scrollNext = React.useCallback(() => {
+    if (!api) return
+    const currentIndex = api.selectedScrollSnap()
+    const nextIndex = currentIndex + 2
+    const maxIndex = api.scrollSnapList().length - 1
+    api.scrollTo(nextIndex > maxIndex ? maxIndex : nextIndex)
   }, [api])
 
-  const scrollNext = React.useCallback(() => {
-    api?.scrollNext()
+  const scrollPrev = React.useCallback(() => {
+    if (!api) return
+    const currentIndex = api.selectedScrollSnap()
+    const prevIndex = currentIndex - 2
+    api.scrollTo(prevIndex < 0 ? 0 : prevIndex)
   }, [api])
 
   const handleKeyDown = React.useCallback(

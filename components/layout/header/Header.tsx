@@ -1,95 +1,87 @@
-'use client';
+'use client'
 
 import React, { useState } from 'react'
-import { Button, Logo } from '../../ui'
-import Image from 'next/image';
-import OpenHamburger from './openHamburger';
-import CloseHamburger from './closeHamburger';
-import { useGsapFadeUp } from '@/hooks/useGsapFadeUp';
-import { useImageFadeIn } from '@/hooks/useImageFadeIn';
-import Link from 'next/link';
+import Link from 'next/link'
+import Logo from '@/components/ui/Logo'
 
 const Header = () => {
-    const [navbar, setNavbar] = useState(false);
-    const handleNavbar = () => {
-        setNavbar(!navbar);
-    }
-
-    const headerRef = useGsapFadeUp({ trigger: ".header", y: 0, x: 0, opacity: 0, duration: 1.5 });
-    const navRef = useGsapFadeUp({ trigger: ".nav", y: 0, x: 150, opacity: 0, duration: 1.5 });
-    const imageRef = useImageFadeIn();
+    const [isOpen, setIsOpen] = useState(false)
 
     return (
-        <header ref={headerRef} className='shadow-xl header sticky top-0 z-60 bg-white'>
-            <div className='flex items-center justify-between pl-16 pr-8 py-8 max-md:p-6 max-lg:pl-12 max-lg:pr-6 max-lg:py-6 max-xl:pl-14 max-xl:pr-7 max-xl:py-7'>
-                <Logo ref={imageRef} width={181} height={62} className='max-sm:w-[95px] max-sm:h-[28px] max-md:w-[138px] max-md:h-[44px] max-lg:w-[138px] max-lg:h-[44px] max-xl:w-[155px] max-xl:h-[56px]' />
-                <div ref={navRef} className='flex nav gap-16 hide-on-mobile max-lg:gap-6 max-xl:gap-12'>
-                    <nav className='flex items-center gap-8'>
-                        <ul className='text-black font-semibold flex text-lg gap-8 justify-center max-lg:text-sm max-lg:gap-4 max-xl:text-[16px] max-xl:gap-6'>
-                            <li>
-                                <Link href='#about-us'>About us</Link>
-                            </li>
-                            <li>
-                                <Link href='#directions'>Directions</Link>
-                            </li>
-                            <li>
-                                <Link href='#cases'>Cases</Link>
-                            </li>
-                            <li>
-                                <Link href='#reviews'>Reviews</Link>
-                            </li>
-                            <li>
-                                <Link href='#blog'>Our blog</Link>
-                            </li>
-                        </ul>
-                    </nav>
-                    <Button title={'Contact us'} section={'header'} />
-                </div>
-                <OpenHamburger onClick={handleNavbar} />
-            </div>
-            <div
-                className={`fixed inset-0 bg-black transition-opacity duration-300 ease-in-out z-30 hide-on-dekstop
-                    ${navbar ? 'opacity-50 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
-                onClick={handleNavbar}
-            />
-            <div className={`fixed h-screen w-[50%] bg-second-background right-0 top-0 
-                pr-6 py-8 max-md:p-6 max-lg:pl-12 max-lg:pr-6 max-lg:py-6 
-                transition-transform duration-300 ease-in-out 
-                z-40 hide-on-dekstop ${navbar ? 'translate-x-0' : 'translate-x-full'}`}>
-                <div className='flex justify-end'>
-                    <CloseHamburger onClick={handleNavbar} />
-                </div>
-                <div className='mt-10 flex flex-col gap-12 text-black font-semibold text-lg max-sm:text-[16px]'>
-                    <ul className='flex flex-col items-center gap-4 justify-center'>
+        <nav className="bg-white border-b border-gray-200 dark:bg-gray-900 px-16 py-8 fixed top-0 left-0 w-full z-50 shadow-lg">
+            <div className="max-w-screen-2xl flex mx-auto flex-wrap items-center justify-between">
+                <Logo width={181} height={62} />
+
+                <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    type="button"
+                    className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="navbar-default"
+                    aria-expanded={isOpen}
+                >
+                    <span className="sr-only">Open main menu</span>
+                    <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M1 1h15M1 7h15M1 13h15"
+                        />
+                    </svg>
+                </button>
+
+                <div className={`${isOpen ? 'block' : 'hidden'} w-full md:block md:w-auto`} id="navbar-default">
+                    <ul className="font-semibold text-lg flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                         <li>
-                            <Link href='/'>About us</Link>
+                            <Link
+                                href="#directions"
+                                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Directions
+                            </Link>
                         </li>
                         <li>
-                            <Link href='/'>Directions</Link>
+                            <Link
+                                href="#cases"
+                                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Cases
+                            </Link>
                         </li>
                         <li>
-                            <Link href='/'>Careers</Link>
+                            <Link
+                                href="#about-us"
+                                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                About us
+                            </Link>
                         </li>
                         <li>
-                            <Link href='/'>Team</Link>
+                            <Link
+                                href="#reviews"
+                                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Reviews
+                            </Link>
                         </li>
                         <li>
-                            <Link href='/'>Cases</Link>
-                        </li>
-                        <li>
-                            <Link href='/'>Reviews</Link>
+                            <Link
+                                href="#blog"
+                                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Blog
+                            </Link>
                         </li>
                     </ul>
-                    <div className='flex justify-center items-center gap-3'>
-                        <Image src='/assets/icons/linkedin.svg' width={0} height={0} alt="Linkedin" className='max-sm:w-9 max-sm:h-9 w-12 h-12' />
-                        <Image src='/assets/icons/instagram.svg' width={0} height={0} alt="Linkedin" className='max-sm:w-9 max-sm:h-9 w-12 h-12' />
-                        <Image src='/assets/icons/facebook.svg' width={0} height={0} alt="Linkedin" className='max-sm:w-9 max-sm:h-9 w-12 h-12' />
-                    </div>
                 </div>
             </div>
-
-
-        </header>
+        </nav>
     )
 }
 

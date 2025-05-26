@@ -2,7 +2,7 @@
 
 import { Container, Description, Heading, SectionTitle } from '@/components/ui'
 import React from 'react'
-import InfoCard from './aboutUsCard'
+import InfoCard from './AboutUsCard'
 import { COMPANY_INFORMATION } from '@/constants/companyinformation'
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -19,7 +19,7 @@ const AboutUs = () => {
 
     return (
         <Container type={'default'} colorContainer={'gray'} className='max-xl:px-24 max-lg:px-16 max-sm:px-6 max-md:px-30'>
-            <div id='about-us' className='about-us-content'>
+            <div id='about-us' className='about-us-content max-w-screen-2xl mx-auto'>
                 <div ref={headingRef} className='flex about-us-heading max-[1130px]:justify-center'>
                     <SectionTitle title='About company' />
                 </div>

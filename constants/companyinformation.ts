@@ -39,12 +39,11 @@ export const CERTIFICATE_INFO = [
 ]
 
 export const PARTNERS = [
-    { name: 'Visa', src: '/assets/icons/visalogo.svg',},
-    { name: 'Visa', src: '/assets/icons/visalogo.svg',},
-    { name: 'Visa', src: '/assets/icons/visalogo.svg',},
-    { name: 'Visa', src: '/assets/icons/visalogo.svg',},
-    { name: 'Visa', src: '/assets/icons/visalogo.svg',},
-    { name: 'Visa', src: '/assets/icons/visalogo.svg',},
-    { name: 'Visa', src: '/assets/icons/visalogo.svg',},
-    { name: 'Visa', src: '/assets/icons/visalogo.svg',},
+    { name: 'Weband', src: '/assets/icons/webandlogo.svg',},
+    { name: 'Weband', src: '/assets/icons/webandlogo.svg',},
+    { name: 'Weband', src: '/assets/icons/webandlogo.svg',},
+    { name: 'Weband', src: '/assets/icons/webandlogo.svg',},
+    { name: 'Weband', src: '/assets/icons/webandlogo.svg',},
+    { name: 'Weband', src: '/assets/icons/webandlogo.svg',},
+    { name: 'Weband', src: '/assets/icons/webandlogo.svg',},
 ]

@@ -4,11 +4,11 @@ import React, { useState, JSX } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
-import SwiperPagination from "./sliderPagination";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { SliderProps } from '@/types';
+import SliderPagination from "./SliderPagination";
 
 export default function Slider({ children }: SliderProps): JSX.Element {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -39,7 +39,7 @@ export default function Slider({ children }: SliderProps): JSX.Element {
                                 ))}
                             </Swiper>
 
-                            <SwiperPagination
+                            <SliderPagination
                                 totalSlides={React.Children.count(children)}
                                 currentIndex={currentIndex}
                                 onDotClick={(index) => {

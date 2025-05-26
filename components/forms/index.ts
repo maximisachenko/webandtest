@@ -1,5 +1,3 @@
-import BlogForm from './blogForm';
-import ChatbotForm from './chatbotForm';
-import ContactForm from './contactForm';
+import ChatbotForm from './ChatbotForm';
 
-export { BlogForm, ChatbotForm, ContactForm};
+export { ChatbotForm};

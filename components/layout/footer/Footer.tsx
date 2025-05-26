@@ -2,7 +2,7 @@
 
 import { ContactInfo, Container, Logo } from '@/components/ui'
 import React from 'react'
-import FooterSocialButton from './footerSocialButton'
+import FooterSocialButton from './FooterSocialButton'
 import { CONTACT_INFO_PRIMARY } from '@/constants/info'
 import Link from 'next/link'
 
@@ -10,7 +10,7 @@ const Footer = () => {
 
     return (
         <Container type='default' colorContainer='white' className='max-xl:px-24 max-lg:px-16 max-sm:px-6 max-md:px-30 max-md:pb-6'>
-            <div className='flex flex-col gap-8 max-md:gap-16'>
+            <div className='flex flex-col gap-8 max-md:gap-16 max-w-screen-2xl mx-auto'>
                 <div className='flex justify-between 
                                 max-[915px]:gap-x-15
                                 max-[915px]:gap-y-16 

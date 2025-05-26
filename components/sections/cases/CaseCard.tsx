@@ -3,7 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { TECHNOLOGIES } from '@/constants/technologies'
-import TechnologyCircle from './technologyCircle'
+import TechnologyCircle from './TechnologyCircle'
 import { Button } from '@/components/ui'
 import { useIsTablet } from '@/hooks/useIsMobile';
 import { CaseCardProps } from '@/types';

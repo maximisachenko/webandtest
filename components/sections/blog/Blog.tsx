@@ -1,13 +1,12 @@
 'use client'
 
 import { Container, Heading } from '@/components/ui'
-import BlogCard from './blogCard'
 import React from 'react'
-import SubscribeForm from '../../forms/blogForm'
 import { ARTICLES } from '@/constants/articles'
 import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGsapFadeUp } from '@/hooks/useGsapFadeUp';
+import BlogCard from './BlogCard'
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -18,7 +17,7 @@ const Blog = () => {
 
     return (
         <Container type='default' colorContainer='gray' className='max-xl:px-24 max-lg:px-16 max-sm:px-6 max-md:px-30'>
-            <div id='blog' className='blog-content'>
+            <div id='blog' className='blog-content max-w-screen-2xl mx-auto'>
                 <div ref={headingRef} className='mb-16 blog-heading max-md:text-center max-md:flex max-md:justify-center'>
                     <Heading primaryTitle='The most' foregroundTitle='popular and requested articles that are worth reading' className='w-1/2 max-[978px]:w-[80%] max-[553px]:w-full' />
                 </div>
@@ -61,7 +60,6 @@ const Blog = () => {
                         ))}
                     </div>
                 </div>
-                <SubscribeForm />
             </div>
         </Container>
     )

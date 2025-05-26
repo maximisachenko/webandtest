@@ -12,6 +12,8 @@ const CompaniesCarousel = () => {
                         src={logo.src}
                         alt={`Company ${logo.name}`}
                         className="h-10 object-contain"
+                        width={140}
+                        height={140}
                     />
                 ))}
                 {PARTNERS.map((logo, index) => (
@@ -20,6 +22,8 @@ const CompaniesCarousel = () => {
                         src={logo.src}
                         alt={`Company duplicate ${logo.name}`}
                         className="h-10 object-contain"
+                        width={140}
+                        height={140}
                     />
                 ))}
             </div>

@@ -1,7 +1,7 @@
 import React from "react";
-import { SwiperPaginationProps } from '@/types';
+import { SliderPaginationProps } from '@/types';
 
-const SwiperPagination: React.FC<SwiperPaginationProps> = ({
+const SliderPagination: React.FC<SliderPaginationProps> = ({
     totalSlides,
     currentIndex,
     onDotClick,
@@ -22,4 +22,4 @@ const SwiperPagination: React.FC<SwiperPaginationProps> = ({
     );
 };
 
-export default SwiperPagination;
+export default SliderPagination;

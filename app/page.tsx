@@ -2,7 +2,7 @@ import { Directions, Cases, Reviews, Blog, AboutUs, Hero } from "@/components/se
 
 export default function Home() {
   return (
-    <div>
+    <div className='pt-20'>
       <Hero />
       <Directions />
       <Cases />
@@ -12,3 +12,4 @@ export default function Home() {
     </div>
   );
 }
+

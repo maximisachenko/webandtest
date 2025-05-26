@@ -6,12 +6,12 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/sections/reviews/reviewCarousel';
-import ReviewCard from './reviewCard';
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/sections/reviews/ReviewCarousel';
+import ReviewCard from './ReviewCard';
 import { REVIEWERS } from '@/constants/reviewers';
-import RewardCard from './rewardCard';
+import RewardCard from './RewardCard';
 import { CERTIFICATE_INFO } from '@/constants/companyinformation';
-import CompaniesCarousel from './companiesCarousel';
+import CompaniesCarousel from './CompaniesCarousel';
 import { useGsapFadeUp } from '@/hooks/useGsapFadeUp';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -23,7 +23,7 @@ const Reviews = () => {
     const rewardRef = useGsapFadeUp({ trigger: ".reviews-reward", y: -50, x: -150, opacity: 0, duration: 1.5 });
 
     return (
-        <div id='reviews' className='pt-16 reviews-content relative'>
+        <div id='reviews' className='pt-16 reviews-content relative max-w-screen-2xl mx-auto'>
             <div ref={headingRef} className='flex flex-col items-center reviews-heading text-center mb-16'>
                 <SectionTitle title='Reviews' />
                 <Heading primaryTitle={'Customer'} foregroundTitle={'reviews are proof of our quality.'} className='w-1/2 mb-2 max-md:w-full max-lg:w-[75%]' />

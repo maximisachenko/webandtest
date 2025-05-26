@@ -2,10 +2,9 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import ChatMessage from './chatMessage';
-import { ABOUT_COMPANY } from '@/constants/companyinformation';
+import ChatMessage from './ChatMessage';
 import { ChatItem } from '@/types';
-import ChatbotForm from '@/components/forms/chatbotForm';
+import ChatbotForm from '@/components/forms/ChatbotForm';
 
 interface GeminiMessage {
     role: 'model' | 'user';
@@ -15,8 +14,7 @@ interface GeminiMessage {
 const Chatbot = () => {
 
     const [chatHistory, setChatHistory] = useState<ChatItem[]>([
-        { role: 'model', text: ABOUT_COMPANY, hideInChat: true, },
-        { role: 'model', text: 'Hello! My name is Casper. How can I help you?' }
+        { role: 'model', text: 'Hello! My name is Casper. How can I help you?' },
     ]);
     const [showChatBot, setShowChatBot] = useState(false);
 
@@ -80,7 +78,9 @@ const Chatbot = () => {
                 </span>
             </button>
             <div
-                className={`bg-white chatbot-popup-shadow rounded-[15px] w-105 overflow-hidden fixed bottom-8 right-9 origin-bottom-right transform transition-all duration-300 ease-out max-sm:right-0 max-sm:bottom-0 max-sm:h-full max-sm:rounded-none max-sm:w-full ${showChatBot ? 'opacity-100 pointer-events-auto scale-100' : 'opacity-0 pointer-events-none scale-50'}`}
+                className={`bg-white chatbot-popup-shadow rounded-[15px] w-105 overflow-hidden fixed bottom-8 right-9 origin-bottom-right transform transition-all duration-300 ease-out
+    max-sm:right-0 max-sm:bottom-0 max-sm:h-full max-sm:rounded-none max-sm:w-full
+    ${showChatBot ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none translate-y-full'}`}
             >
                 <div className='flex py-[15px] px-[22px] items-center justify-between bg-primary max-sm:py-3 max-sm:px-4'>
                     <div className='flex gap-[10px] items-center'>

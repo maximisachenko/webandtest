@@ -66,7 +66,7 @@ export interface SliderButtonProps {
     className?: string;
 }
 
-export interface SwiperPaginationProps {
+export interface SliderPaginationProps {
     totalSlides: number;
     currentIndex: number;
     onDotClick?: (index: number) => void;
